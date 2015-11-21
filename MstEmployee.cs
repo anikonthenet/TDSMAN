@@ -2,7 +2,7 @@
 
 /*
 _________________________________________________________________________________________________________
-Author			: Anik Ghosh
+Author			: Anik Josh
 Module Name		: MstDeductee
 Version			: 1.0
 Start Date		: 18-11-2010
