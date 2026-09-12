@@ -1,0 +1,1026 @@
+
+#region Refered Namespaces & Classes
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+using System.IO;
+using System.Net;
+
+//~~~~ This namespace are using for using VB6 component
+using Microsoft.VisualBasic.Compatibility.VB6;
+
+using TDSMAN.Classes;
+using TDSMAN.FormSys;
+
+#endregion
+
+namespace TDSMAN.FormWeb
+{
+    public partial class TrnChallanStatusTracesRemoved : TDSMAN.FormGen.GenForm
+    {
+        #region System Generated Code
+        public TrnChallanStatusTracesRemoved()
+        {
+            InitializeComponent();
+        }
+        #endregion
+
+        #region Objects & Variables decleration
+
+        TracesConnect objAccount = new TracesConnect();
+        CommonService cmnService = new CommonService();
+        TDSMAN.Classes.TDSMAN TdsMan = new TDSMAN.Classes.TDSMAN();
+        DateService dtService = new DateService();
+        DMLService dmlService = new DMLService();
+
+        string strSQL = string.Empty;
+        bool blnShowHelp = false;
+        //--            
+        ToolTip tllTip = new ToolTip();
+
+        enum enmRequestType
+        {
+            Login,
+            ChallanEnquiryList1,
+            ChallanEnquiryList2,
+            ConsumptionDetails,
+            LogOff
+        }
+
+        string strMessage = "";
+        int intRowIndex = 0;
+        int intColumnIndex = 0;
+        #endregion
+
+        #region TrnChallanStatusTraces_Load
+        private void TrnChallanStatusTraces_Load(object sender, EventArgs e)
+        {
+            InitializeCaptcha();
+
+            lblTitle.Text = "Challan Status Query";
+            //
+            ClearControls();
+        }
+        #endregion
+
+        #region btnLogin_Click
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cmnService.J_UserMessage("Proceed ??", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                    return;
+                //--
+                if (TdsMan.T_CheckInternetConnectivty() == false)
+                {
+                    cmnService.J_UserMessage("Internet Connectivity not found");
+                    BtnExit.Select();
+                    return;
+                }
+                //--
+                if (!ValidateFields()) return;
+                //--
+                //############ NOW ADDING THE USER ID AND PASSWORD IN MASTER 
+
+                strSQL = "SELECT COUNT(*) FROM MST_TAN_ACCOUNT WHERE TAN_NO = '" + cmnService.J_ReplaceQuote(txtTANNo.Text) + "' ";
+                int iCount = Convert.ToInt32(dmlService.J_ExecSqlReturnScalar(strSQL));
+
+                if (iCount == 0)
+                {
+                    //insering new record in the tan login master
+                    strSQL = "INSERT INTO MST_TAN_ACCOUNT(TAN_NO, LOGIN_ID, USER_PASSWORD) " +
+                             "VALUES( '" + cmnService.J_ReplaceQuote(txtTANNo.Text) + "', " +
+                             "        '" + cmnService.J_ReplaceQuote(txtUserID.Text) + "', " +
+                             "        '" + cmnService.J_ReplaceQuote(txtPassword.Text) + "')";
+
+                    dmlService.J_ExecSql(strSQL);
+                }
+                else
+                {
+                    //updating the existing record in the master
+
+                    strSQL = "UPDATE MST_TAN_ACCOUNT " +
+                             "SET    TAN_NO        = '" + cmnService.J_ReplaceQuote(txtTANNo.Text) + "', " +
+                             "       LOGIN_ID      = '" + cmnService.J_ReplaceQuote(txtUserID.Text) + "', " +
+                             "       USER_PASSWORD = '" + cmnService.J_ReplaceQuote(txtPassword.Text) + "' " +
+                             "WHERE  TAN_NO        = '" + cmnService.J_ReplaceQuote(txtTANNo.Text) + "' ";
+
+                    dmlService.J_ExecSql(strSQL);
+                }
+                //#################
+                //--
+                TracesLogin objLogin = new TracesLogin();
+                objLogin.UserID = txtUserID.Text;
+                objLogin.Password = txtPassword.Text;
+                objLogin.TAN = txtTANNo.Text;
+                objLogin.CaptchaCode = txtCaptchaCode.Text;
+                //--------------------------------------------
+                ArrayList objList = new ArrayList();
+                objList.Add(enmRequestType.Login);
+                objList.Add(objLogin);
+                //-------------------------------------------
+                pgTimer.Start();
+                //-------------------------------------------
+                if (!bgWorker.IsBusy)
+                    bgWorker.RunWorkerAsync(objList);
+                //
+            }
+            catch //(Exception err)
+            {
+                //cmnService.J_UserMessage(err.Message);
+                cmnService.J_UserMessage("We are not able to receive the response from the TRACES webiste.\n It is requested to check your details at TRACES website with the given parameters");
+            }
+        }
+
+        #endregion
+
+        #region btnLoginCancel_Click
+        private void btnLoginCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        #endregion
+
+        #region btnCaptchaRefresh_Click
+        private void btnCaptchaRefresh_Click(object sender, EventArgs e)
+        {
+            InitializeCaptcha();
+        }
+
+        #endregion
+
+        #region btnCaptchaRefresh_MouseMove
+        private void btnCaptchaRefresh_MouseMove(object sender, MouseEventArgs e)
+        {
+            tllTip.Show("Click to refresh image", btnCaptchaRefresh);
+        }
+        #endregion
+
+        #region bgWorker_DoWork
+        private void bgWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            ArrayList objList = (ArrayList)e.Argument;
+            ArrayList objRetval = new ArrayList();
+            //-------------------------------------------------------
+            enmRequestType enReqType = (enmRequestType)objList[0];
+            TracesResponse objResponse;
+            //-------------------------------------------------------
+            switch (enReqType)
+            {
+                // LOGIN REQUEST
+                case enmRequestType.Login:
+                    objResponse = objAccount.makeLoginToTRACES((TracesLogin)objList[1]);
+                    //---------------------------------------------------
+                    objRetval.Add(enmRequestType.Login);
+                    objRetval.Add(objResponse);
+                    //---------------------------------------------------
+                    e.Result = objRetval;
+                    //---------------------------------------------------
+                    break;
+                // LIST OF CHALLAN ENQUIRY 1
+                case enmRequestType.ChallanEnquiryList1:
+                    TracesResponse response = objAccount.RequestForChallanStatusQuery1((TracesData)objList[1]);
+                    objRetval.Add(enmRequestType.ChallanEnquiryList1);
+                    objRetval.Add(response);
+                    e.Result = objRetval;
+                    break;
+                // LIST OF CHALLAN ENQUIRY 2
+                case enmRequestType.ChallanEnquiryList2:
+                    response = objAccount.RequestForChallanStatusQuery2((TracesData)objList[1]);
+                    objRetval.Add(enmRequestType.ChallanEnquiryList2);
+                    objRetval.Add(response);
+                    e.Result = objRetval;
+                    break;
+
+                // VIEW CONSUMPTION DETAILS
+                case enmRequestType.ConsumptionDetails:
+
+                    response = objAccount.RequestForConsumptionDetails((TracesData)objList[1]);
+                    objRetval.Add(enmRequestType.ConsumptionDetails);
+                    objRetval.Add(response);
+                    e.Result = objRetval;
+                    break;
+
+                //REQUEST FOR LOG OFF
+                case enmRequestType.LogOff:
+                    objResponse = objAccount.Logoff();
+                    objRetval.Add(enmRequestType.LogOff);
+                    objRetval.Add(objResponse);
+                    e.Result = objRetval;
+                    break;
+            }
+        }
+
+        #endregion
+
+        #region bgWorker_RunWorkerCompleted
+        private void bgWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            try
+            {
+                ArrayList objMessage = (ArrayList)e.Result;
+                enmRequestType enmReqType = (enmRequestType)objMessage[0];
+                TracesResponse objResponse = (TracesResponse)objMessage[1];
+                //---------------------------------------------------------
+                switch (enmReqType)
+                {
+                    case enmRequestType.Login:
+                        //pgTimer.Stop();
+                        //pgTimer.Interval = 1000;
+                        //pBar.Value = 99;
+                        //---------------------------------------------------
+                        if (objResponse.Respons == enmResponse.Success)
+                            ShowHideLoginDetails(enmRequestType.ChallanEnquiryList1);
+
+                        if (objResponse.Respons == enmResponse.Failed)
+                        {
+                            pgTimer.Stop();
+                            pBar.Value = 100;
+                            cmnService.J_UserMessage(objResponse.Message);
+                            InitializeCaptcha();
+                            return;
+                        }
+                        else
+                        {
+                            //---------------------------------------------------
+                            pBar.Value = 0;
+                            pgTimer.Stop();
+
+                            //---------------------------------------------------
+                        }
+                        break;
+
+                    case enmRequestType.ChallanEnquiryList1:
+                    case enmRequestType.ChallanEnquiryList2:
+                        this.pgTimer.Stop();
+                        pBar.Value = 100;
+                        //-------------------------------------------------------
+                        if (objResponse.Respons == enmResponse.SessionTimeout)
+                        {
+                            ShowHideLoginDetails(enmRequestType.LogOff);
+                            return;
+                        }
+
+                        if (objResponse.Respons == enmResponse.Failed )
+                        {
+                            cmnService.J_UserMessage(objResponse.Message);
+                            return;
+                        }
+
+                        //--------------------------------------------------------
+                        DataTable dTable = (DataTable)objResponse.CustomeTypes;
+
+                        PopulateDatagridView(dTable);
+                        break;
+
+                    case enmRequestType.ConsumptionDetails:
+                        pgTimerGrid.Stop();
+                        dgvStatementList.Rows[intRowIndex].Cells[6].Value = 100;
+                        //-----------------------------------------------------
+                        if (objResponse.Respons == enmResponse.SessionTimeout)
+                        {
+                            ShowHideLoginDetails(enmRequestType.LogOff);
+                            return;
+                        }
+
+                        if (objResponse.Respons == enmResponse.Failed)
+                        {
+                            cmnService.J_UserMessage(objResponse.Message);
+                            return;
+                        }
+
+                        //-----------------------------------------------------
+                        dTable = (DataTable)objResponse.CustomeTypes;
+                        //------------------------------------------------------
+                        dgvConsumption.Columns.Clear();
+                        dgvConsumption.DataSource = null;
+                        dgvConsumption.DataSource = dTable;
+                        //if (dTable.Rows.Count <= 0)
+                        //    cmnService.J_UserMessage("Records not found");
+
+                        break;
+
+                    case enmRequestType.LogOff:
+                        this.pgTimer.Stop();
+                        pBar.Value = 100;
+
+                        txtUserID.Text = "";
+                        txtPassword.Text = "";
+                        txtTANNo.Text = "";
+                        txtCaptchaCode.Text = "";
+                        grpDownloadList.Visible = false;
+                        grpLoginDetails.Visible = true;
+                        // grpProgress.Visible = true;
+                        BtnSave.Enabled = true;
+                        BtnSave.BackColor = Color.Lavender;
+                        InitializeCaptcha();
+                        pBar.Value = 0;
+                        break;
+                }
+                //-------------------------------------------------------
+            }
+            catch (Exception err)
+            {
+                cmnService.J_UserMessage(err.Message, MessageBoxIcon.Error);
+            }
+        }
+
+        #endregion
+
+        #region pgTimer_Tick
+        private void pgTimer_Tick(object sender, EventArgs e)
+        {
+            // Slow down
+            //this.pgTimer.Interval = (this.pgTimer.Interval * 2);
+
+            // SLOW DOWN THE INTERVAL
+            this.pgTimer.Interval = 1000;
+            this.pBar.Step = 5;
+
+            // Update progress bar
+            if ((pBar.Value + pBar.Step) > pBar.Maximum)
+            {
+                pBar.Value = pBar.Minimum;
+            }
+            else
+            {
+                pBar.Value += pBar.Step;
+            }
+        }
+
+        #endregion
+
+
+
+        #region txtTANNo_KeyPress
+        private void txtTANNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Convert.ToInt64(e.KeyChar) == 13)
+            {
+                if (lstDeducteeHelp.Visible == true)
+                {
+                    lstDeducteeHelp.Focus();
+                    lstDeducteeHelp.SelectedIndex = 0;
+                }
+                else
+                    SendKeys.Send("{tab}");
+            }
+            else if (Convert.ToInt64(e.KeyChar) == 27)
+            {
+                lstDeducteeHelp.Visible = false;
+            }
+            else
+                if (TdsMan.gTANNoPANNoValidation(txtTANNo, e, T_TANPAN.TAN) == false)
+                    e.Handled = true;
+        }
+
+        #endregion
+
+        #region txtTAN_KeyDown
+        private void txtTAN_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                if (lstDeducteeHelp.Visible == true)
+                {
+                    lstDeducteeHelp.Focus();
+                    lstDeducteeHelp.SelectedIndex = 0;
+                }
+            }
+        }
+        #endregion
+
+        #region txtTAN_TextChanged
+        private void txtTAN_TextChanged(object sender, EventArgs e)
+        {
+            //cmbFAYear_SelectedIndexChanged(sender, e);
+
+            IDataReader drdShowDeducteeHelp = null;
+            //--
+            try
+            {
+                if (txtTANNo.Text.Trim() == "")
+                {
+                    lstDeducteeHelp.Visible = false;
+                    return;
+                }
+
+                if (blnShowHelp == false)
+                    return;
+                //-----------------------
+                strSQL = "SELECT TAN_ACCOUNT_ID," +
+                         "       TAN_NO," +
+                         "       LOGIN_ID," +
+                         "       USER_PASSWORD " +
+                         "FROM   MST_TAN_ACCOUNT " +
+                         "WHERE  TAN_NO LIKE '" + cmnService.J_ReplaceQuote(txtTANNo.Text) + "%' " +
+                         "ORDER BY TAN_NO, TAN_ACCOUNT_ID";
+
+                drdShowDeducteeHelp = dmlService.J_ExecSqlReturnReader(strSQL);
+                //--
+                if (drdShowDeducteeHelp == null)
+                {
+                    lstDeducteeHelp.Visible = false;
+                    drdShowDeducteeHelp.Close();
+                    drdShowDeducteeHelp.Dispose();
+                    return;
+                }
+                else
+                {
+                    lstDeducteeHelp.Items.Clear();
+                    lstDeducteeHelp.Height = 15;
+                    lstDeducteeHelp.Visible = true;
+                    while (drdShowDeducteeHelp.Read())
+                    {
+                        lstDeducteeHelp.Items.Add(new ListBoxItem(drdShowDeducteeHelp["TAN_NO"].ToString().PadRight(12) + drdShowDeducteeHelp["LOGIN_ID"].ToString().PadRight(15) + drdShowDeducteeHelp["USER_PASSWORD"]));
+                        //--
+                        if (lstDeducteeHelp.Height <= 300)
+                            lstDeducteeHelp.Height = lstDeducteeHelp.Height + 19;
+                    }
+                    //--
+                    if (lstDeducteeHelp.Items.Count <= 0)
+                        lstDeducteeHelp.Visible = false;
+                }
+                //-----------------------------------------------------------
+                drdShowDeducteeHelp.Close();
+                drdShowDeducteeHelp.Dispose();
+                //-----------------------------------------------------------
+            }
+            catch (Exception err_handler)
+            {
+                drdShowDeducteeHelp.Close();
+                drdShowDeducteeHelp.Dispose();
+                cmnService.J_UserMessage(err_handler.Message);
+            }
+            //-----------------------
+        }
+        #endregion
+
+        #region txtTAN_Leave
+        private void txtTAN_Leave(object sender, EventArgs e)
+        {
+            if (txtTANNo.Text.Trim() == "") return;
+            //INITIALIZE CAPTCHA CODE
+            //InitializeCaptcha();
+
+        }
+        #endregion
+
+
+        #region lstDeducteeHelp_KeyPress
+        private void lstDeducteeHelp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Convert.ToInt64(e.KeyChar) == 13)
+                lstDeducteeHelp_Click(sender, e);
+            else if (Convert.ToInt64(e.KeyChar) == 27)
+            {
+                lstDeducteeHelp.Visible = false;
+                txtTANNo.Select();
+            }
+        }
+        #endregion
+
+        #region lstDeducteeHelp_Click
+        private void lstDeducteeHelp_Click(object sender, EventArgs e)
+        {
+            string strlstDeducteeHelp = lstDeducteeHelp.Text;
+
+            txtTANNo.Text = cmnService.J_Left(strlstDeducteeHelp, 10);
+
+            txtUserID.Text = cmnService.J_Mid(strlstDeducteeHelp, strlstDeducteeHelp.IndexOf(' '),
+                                              strlstDeducteeHelp.LastIndexOf(' ') - strlstDeducteeHelp.IndexOf(' ')).Trim();
+
+            txtPassword.Text = cmnService.J_Right(strlstDeducteeHelp, strlstDeducteeHelp.Length - strlstDeducteeHelp.LastIndexOf(' ')).Trim();
+
+            lstDeducteeHelp.Visible = false;
+            //--
+            txtCaptchaCode.Select();
+        }
+        #endregion
+
+
+        #region lnkLogOff_Click
+        private void lnkLogOff_Click(object sender, EventArgs e)
+        {
+            ShowHideLoginDetails(enmRequestType.LogOff);
+        }
+        #endregion
+
+
+        #region InitializeCaptcha
+        private void InitializeCaptcha()
+        {
+            //--
+            if (TdsMan.T_CheckInternetConnectivty() == false)
+            {
+                cmnService.J_UserMessage("Internet Connectivity not found");
+                return;
+            }
+            //----------------------------------------------------
+            objAccount = new TracesConnect();
+            Stream imgStream = objAccount.MakeInitialRequest();
+            Image img = Image.FromStream(imgStream);
+            this.picCaptcha.Image = img;
+            //-------------------------------------------------------
+            txtCaptchaCode.Text = "";
+        }
+
+        #endregion
+
+        #region ValidateFields
+        bool ValidateFields()
+        {
+            if (string.IsNullOrEmpty(txtTANNo.Text))
+            {
+                cmnService.J_UserMessage("Please enter TAN");
+                txtTANNo.Focus();
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtUserID.Text))
+            {
+                cmnService.J_UserMessage("Please enter User ID");
+                txtUserID.Focus();
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtPassword.Text))
+            {
+                cmnService.J_UserMessage("Please enter Password");
+                txtPassword.Focus();
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtCaptchaCode.Text))
+            {
+                cmnService.J_UserMessage("Please enter Captcha Code");
+                txtCaptchaCode.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+        #endregion
+
+        #region PopulateDatagridView
+        void PopulateDatagridView(DataTable dsRecords)
+        {
+            // DATA BIND TO GRIDVIEW CONTROL
+            dgvStatementList.Columns.Clear();
+            dgvStatementList.DataSource = null;
+            dgvStatementList.DataSource = dsRecords;
+            //---------------------------------------
+            //CHECKING IF RECORD EXISTS OR NOT
+
+            if (dsRecords.Rows.Count <= 0)
+            {
+                cmnService.J_UserMessage("No data available for the specified search criteria");
+            }
+            //---------------------------------------
+
+            // CREATE DOWNLOAD BUTTON & PROGRESSBAR CONTROL COLUMNS 
+            //------------------------------------------------------------
+            dgvStatementList.Columns[0].Width = 120;
+
+            dgvStatementList.Columns[1].Width = 130;
+            dgvStatementList.Columns[2].Width = 130;
+
+            dgvStatementList.Columns[3].Width = 150;
+
+            DataGridViewLinkColumn btn = new DataGridViewLinkColumn();
+            dgvStatementList.Columns.Add(btn);
+            btn.HeaderText = "";
+            btn.Text = "View Details";
+            btn.Name = "lnkDetails";
+            //------------------------------------------------------------
+            btn.UseColumnTextForLinkValue = true;
+            //------------------------------------------------------------
+            DataGridViewProgressColumn prg = new DataGridViewProgressColumn();
+            dgvStatementList.Columns.Add(prg);
+            prg.Name = "";
+            prg.ProgressBarColor = Color.LightGreen;
+
+
+
+
+
+        }
+
+        #endregion
+
+        #region ShowHideLoginDetails
+        void ShowHideLoginDetails(enmRequestType enmStatus)
+        {
+            switch (enmStatus)
+            {
+                case enmRequestType.Login:
+                    txtUserID.Text = "";
+                    txtPassword.Text = "";
+                    txtCaptchaCode.Text = "";
+                    txtTANNo.Text = "";
+                    grpDownloadList.Visible = false;
+                    grpLoginDetails.Visible = true;
+                    // grpProgress.Visible = true;
+                    InitializeCaptcha();
+                    break;
+                case enmRequestType.ChallanEnquiryList1:
+                    ClearControls();
+                    grpDownloadList.Visible = true;
+                    grpLoginDetails.Visible = false;
+                    // grpProgress.Visible = false;
+                    BtnSave.Enabled = false;
+                    BtnSave.BackColor = Color.LightGray;
+
+
+                    break;
+
+                case enmRequestType.LogOff:
+                    ArrayList objList = new ArrayList();
+                    objList.Add(enmRequestType.LogOff);
+                    //-------------------------------------------
+                    pgTimer.Start();
+                    //-------------------------------------------
+                    if (!bgWorker.IsBusy)
+                        bgWorker.RunWorkerAsync(objList);
+
+                    break;
+
+            }
+        }
+
+        #endregion
+
+        #region ClearControls
+        public void ClearControls()
+        {
+            txtUserID.Text = "";
+            txtPassword.Text = "";
+            txtCaptchaCode.Text = "";
+            txtTANNo.Text = "";
+            grpDownloadList.Visible = false;
+            grpLoginDetails.Visible = true;
+            grpProgress.Visible = true;
+
+            dgvConsumption.Columns.Clear();
+            dgvConsumption.DataSource = null;
+
+            dgvStatementList.Columns.Clear();
+            dgvStatementList.DataSource = null;
+
+            //For Showing the helg grid when tan text is changed
+            blnShowHelp = true;
+            //
+            txtTANNo.Select();
+
+            // ----------------------------
+            // -- POPULATE FORM COMBO BOXES
+            // ----------------------------           
+            //-- CHALLAN STATUS
+            string[] strQtr ={ "All", "Claimed", "Unclaimed" };
+            dmlService.J_PopulateComboBox(strQtr, ref cmbChallanStatus);
+            // ----------------------------
+            cmbChallanStatus.SelectedIndex = 0;
+            txtBSRCode.Text = "";
+            txtChallanSerialNo.Text = "";
+            txtChallanAmount.Text = "";
+            //------------------------------
+            mskChallanFromDate.Text = "";
+            mskChallanToDate.Text = "";
+            mskChallanDate.Text = "";
+
+        }
+        #endregion
+
+        #region btnGo_Click
+        private void btnGo_Click(object sender, EventArgs e)
+        {
+            dgvStatementList.Columns.Clear();
+            dgvStatementList.DataSource = null;
+
+            dgvConsumption.Columns.Clear();
+            dgvConsumption.DataSource = null;
+
+            TracesData objData = new TracesData();
+            //-------------------------------------
+            objData.FromChallanDepositDate = mskChallanFromDate.Text;
+            objData.ToChallanDepositDate = mskChallanToDate.Text;
+
+            if (cmbChallanStatus.SelectedIndex > 0)
+            {
+                switch (cmbChallanStatus.Text)
+                {
+                    case "All":
+                        objData.ChallanStatus = "A";
+                        break;
+                    case "Claimed":
+                        objData.ChallanStatus = "M";
+                        break;
+                    case "Unclaimed":
+                        objData.ChallanStatus = "U";
+                        break;
+                }
+            }
+
+            //-- VALIDATION -----------------------
+            if (!IsValidChallanSearch1(ref objData)) return;
+            ////------------------------------------------------
+            ArrayList objList = new ArrayList();
+            objList.Add(enmRequestType.ChallanEnquiryList1);
+            objList.Add(objData);
+            //-------------------------------------------
+            pgTimer.Start();
+            //-------------------------------------------
+            if (!bgWorker.IsBusy)
+                bgWorker.RunWorkerAsync(objList);
+        }
+        #endregion
+
+        #region btnSearchOpt2Go_Click
+        private void btnSearchOpt2Go_Click(object sender, EventArgs e)
+        {
+            dgvStatementList.Columns.Clear();
+            dgvStatementList.DataSource = null;
+
+            dgvConsumption.Columns.Clear();
+            dgvConsumption.DataSource = null;
+
+            TracesData objData = new TracesData();
+            //-------------------------------------
+            objData.BSRCode = txtBSRCode.Text.Trim();
+            objData.TaxDepositedDate = mskChallanDate.Text;
+            objData.ChallanSerialNo = txtChallanSerialNo.Text;
+            objData.ChallanAmount = txtChallanAmount.Text;
+            //-- VALIDATION -----------------------
+            if (!IsValidChallanSearch2(objData)) return;
+            ////------------------------------------------------
+            ArrayList objList = new ArrayList();
+            objList.Add(enmRequestType.ChallanEnquiryList2);
+            objList.Add(objData);
+            //-------------------------------------------
+            pgTimer.Start();
+            //-------------------------------------------
+            if (!bgWorker.IsBusy)
+                bgWorker.RunWorkerAsync(objList);
+
+        }
+
+        #endregion
+
+        #region dgvStatementList_CellClick
+        private void dgvStatementList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //GETTING ROW & COLUMN INDEX OF SELECT ROW
+            intRowIndex = e.RowIndex;
+            intColumnIndex = e.ColumnIndex;
+            //-------------------------------------------------------------------------------
+            if (e.ColumnIndex == dgvStatementList.Columns["lnkDetails"].Index && e.RowIndex >= 0)
+            {
+                if (Convert.ToString(dgvStatementList.Rows[e.RowIndex].Cells[intColumnIndex].Value).ToLower() == "view details")
+                {
+
+                    dgvConsumption.Columns.Clear();
+                    dgvConsumption.DataSource = null;
+
+                    //-------------------------------------------------------------------------------
+                    pgTimerGrid.Start();
+                    // MessageBox.Show("Button on row {0} clicked" + e.RowIndex + " " + dgvDownloadDetails.Rows[e.RowIndex].Cells[intColumnIndex].Value);
+
+                    ArrayList objList = new ArrayList();
+                    TracesData objData = new TracesData();
+                    objData.ChallanSerialNo = Convert.ToString(dgvStatementList.Rows[e.RowIndex].Cells[1].Value);
+                    objData.ChallanAmount = Convert.ToString(dgvStatementList.Rows[e.RowIndex].Cells[3].Value);
+                    objData.PRN_NO = Convert.ToString(dgvStatementList.Rows[e.RowIndex].Cells[4].Value);
+                    //-------------------------------------------------------------------------------
+                    objList.Add(enmRequestType.ConsumptionDetails);
+                    objList.Add(objData);
+
+                    if (!bgWorker.IsBusy)
+                        bgWorker.RunWorkerAsync(objList);
+                    //-------------------------------------------------------------------------------
+
+
+                }
+            }
+        }
+
+        #endregion
+
+        #region pgTimerGrid_Tick
+        private void pgTimerGrid_Tick(object sender, EventArgs e)
+        {
+            int intValue = Convert.ToInt32(Convert.ToString(dgvStatementList.Rows[intRowIndex].Cells[6].Value) == "" ? "0" : dgvStatementList.Rows[intRowIndex].Cells[6].Value);
+            if (intValue == 100) intValue = 0;
+
+            // Slow down
+            this.pgTimerGrid.Interval = (this.pgTimerGrid.Interval * 2);
+
+            //Update progress bar
+            if ((intValue + 1) > 100)
+            {
+                dgvStatementList.Rows[intRowIndex].Cells[6].Value = 100;
+            }
+            else
+            {
+                intValue += 1;
+                dgvStatementList.Rows[intRowIndex].Cells[6].Value = intValue;
+
+            }
+        }
+
+        #endregion
+
+
+        #region IsValidChallanSearch1
+        public bool IsValidChallanSearch1(ref TracesData objData)
+        {
+            if (string.IsNullOrEmpty(objData.FromChallanDepositDate.Trim()) || objData.FromChallanDepositDate == "  /  /")
+            {
+                cmnService.J_UserMessage("Challan Deposit From Date is mandatory");
+                mskChallanFromDate.Focus();
+                return false;
+            }
+            else
+            {
+                if (!dtService.J_IsDateValid(objData.FromChallanDepositDate.Trim()))
+                {
+                    cmnService.J_UserMessage("Enter a Valid Challan Deposit From Date ");
+                    mskChallanFromDate.Focus();
+                    return false;
+                }
+                else
+                {
+                    objData.FromChallanDepositDate = dtService.J_ConvertddMMyyyy(objData.FromChallanDepositDate).ToString("dd-MMM-yyyy");
+                }
+            }
+
+            if (string.IsNullOrEmpty(objData.ToChallanDepositDate.Trim()) || objData.ToChallanDepositDate == "  /  /")
+            {
+                cmnService.J_UserMessage("Challan Deposit To Date is mandatory");
+                mskChallanToDate.Focus();
+                return false;
+            }
+            else
+            {
+                if (!dtService.J_IsDateValid(objData.ToChallanDepositDate.Trim()))
+                {
+                    cmnService.J_UserMessage("Enter a Valid Challan Deposit From Date ");
+                    mskChallanToDate.Focus();
+                    return false;
+                }
+                else
+                {
+                    objData.ToChallanDepositDate = dtService.J_ConvertddMMyyyy(objData.ToChallanDepositDate).ToString("dd-MMM-yyyy");
+                }
+            }
+            
+            //-----------------------------------------------------------
+            int FromDate = TracesValidation.ConvertUserDate(objData.FromChallanDepositDate);
+            int ToDate = TracesValidation.ConvertUserDate(objData.ToChallanDepositDate);
+            int intCurrentDate = TracesValidation.CurrentDate();
+            //------------------------------------------------------------            
+            if (!TracesValidation.IsValidDate(objData.FromChallanDepositDate) || !TracesValidation.IsValidDate(objData.ToChallanDepositDate))
+            {
+                cmnService.J_UserMessage("Invalid Challan Deposit Date");
+                mskChallanFromDate.Focus();
+                return false;
+            }
+
+            if (FromDate > intCurrentDate || ToDate > intCurrentDate)
+            {
+                cmnService.J_UserMessage("Invalid Challan Deposit Date");
+                mskChallanFromDate.Focus();
+                return false;
+            }
+
+            if (FromDate > ToDate)
+            {
+                cmnService.J_UserMessage("Invalid Challan Deposit Date");
+                mskChallanFromDate.Focus();
+                return false;
+            }
+
+            if (!TracesValidation.ValidateStartDate(objData.FromChallanDepositDate))
+            {
+                cmnService.J_UserMessage("Invalid Challan Deposit Date");
+                mskChallanFromDate.Focus();
+                return false;
+            }
+
+            if (!TracesValidation.validateYearRange(objData.FromChallanDepositDate, objData.ToChallanDepositDate))
+            {
+                cmnService.J_UserMessage("Date range should be within the same financial year.");
+                mskChallanFromDate.Focus();
+                return false;
+            }
+
+
+            return true;
+        }
+
+
+        #endregion
+
+        #region IsValidChallanSearch2
+        public bool IsValidChallanSearch2(TracesData objData)
+        {
+            if (string.IsNullOrEmpty(objData.BSRCode))
+            {
+                cmnService.J_UserMessage("BSR Code is mandatory");
+                txtBSRCode.Focus();
+                return false;
+            }
+            else
+            {
+                if (!TracesValidation.IsNumeric(objData.BSRCode))
+                {
+                    cmnService.J_UserMessage("Invalid BSR Code");
+                    txtBSRCode.Focus();
+                    return false;
+                }
+            }
+
+            if (string.IsNullOrEmpty(objData.TaxDepositedDate) || objData.TaxDepositedDate == "  /  /")
+            {
+                cmnService.J_UserMessage("Date of Deposit is mandatory");
+                mskChallanDate.Focus();
+                return false;
+            }
+            else
+            {
+                if (!dtService.J_IsDateValid(objData.TaxDepositedDate))
+                {
+                    cmnService.J_UserMessage("Enter a Valid Date");
+                    mskChallanDate.Focus();
+                    return false;
+                }
+                else
+                {
+                    objData.TaxDepositedDate = dtService.J_ConvertddMMyyyy(mskChallanDate).ToString("dd-MMM-yyyy");
+                }
+            }
+            //-------------------------------------------------------------
+            if (string.IsNullOrEmpty(objData.ChallanSerialNo))
+            {
+                cmnService.J_UserMessage("Challan Serial Number is mandatory");
+                txtChallanSerialNo.Focus();
+                return false;
+            }
+            else
+            {
+                if (!TracesValidation.IsNumeric(objData.ChallanSerialNo))
+                {
+                    cmnService.J_UserMessage("Invalid Challan Serial Number");
+                    txtChallanSerialNo.Focus();
+                    return false;
+                }
+            }
+            //-------------------------------------------------------------
+            if (string.IsNullOrEmpty(objData.ChallanAmount))
+            {
+                cmnService.J_UserMessage("Challan Amount is mandatory");
+                txtChallanAmount.Focus();
+                return false;
+            }
+            else
+            {
+                if (!TracesValidation.IsNumeric(objData.ChallanAmount))
+                {
+                    cmnService.J_UserMessage("Invalid Challan Amount");
+                    txtChallanAmount.Focus();
+                    return false;
+                }
+                int intCount = objData.ChallanAmount.IndexOf(".");
+
+                if (intCount == 0)
+                {
+                    cmnService.J_UserMessage("Amount should be entered in two decimal places");
+                    txtChallanAmount.Focus();
+                    return false;
+                }
+            }
+            //-------------------------------------------------------------
+
+            return true;
+        }
+
+
+        #endregion
+
+
+
+
+
+
+
+
+
+
+    }
+
+}
+

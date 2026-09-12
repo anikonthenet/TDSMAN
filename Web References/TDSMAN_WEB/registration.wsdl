@@ -1,0 +1,2159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tdsman.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tdsman.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tdsman.com/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="Get_UserDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SERIAL_NO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_UserDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Get_UserDetailResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_COMPANY_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_EMAIL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_MOBILE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_PHONE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_FAX" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_ADD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_CITY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_STATE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_PIN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_UserDetail_New">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SERIAL_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FINANCIAL_YEAR" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_UserDetail_NewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Get_UserDetail_NewResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_COMPANY_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_EMAIL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_MOBILE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_PHONE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_FAX" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_ADD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_CITY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_STATE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_PIN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForMultipleProducts5">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SERIAL_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FINANCIAL_YEAR" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SoftwareProductId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForMultipleProducts5Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ForMultipleProducts5Result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_COMPANY_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_EMAIL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_MOBILE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_PHONE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_FAX" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_ADD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_CITY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_STATE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_PIN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Is_Allow_For_Registration">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SERIAL_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FINANCIAL_YEAR" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CONFIG_NO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Is_Allow_For_RegistrationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Is_Allow_For_RegistrationResult" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="InstallType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForMultipleProducts6">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SERIAL_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FINANCIAL_YEAR" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SoftwareProductId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CONFIG_NO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForMultipleProducts6Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ForMultipleProducts6Result" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="InstallType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Is_FirstTime_Reg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SERIALNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Is_FirstTime_RegResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Is_FirstTime_RegResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Is_FirstTime_Reg_New">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SERIALNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Financial_Year" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Is_FirstTime_Reg_NewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Is_FirstTime_Reg_NewResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForMultipleProducts1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SERIALNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Financial_Year" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SoftwareProductId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForMultipleProducts1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ForMultipleProducts1Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save_User_Header_Detail_Record">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SERIAL_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CONFIG_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VERSION" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="InstallType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_COMPANY_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_EMAIL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_MOBILE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_PHONE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_FAX" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_ADD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_CITY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_STATE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_PIN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save_User_Header_Detail_RecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Save_User_Header_Detail_RecordResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ACTIVATION_NO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForMultipleProducts2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SERIAL_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CONFIG_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VERSION" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SoftwareProductId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="InstallType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_COMPANY_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_EMAIL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_MOBILE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_PHONE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_FAX" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_ADD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_CITY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_STATE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_PIN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForMultipleProducts2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ForMultipleProducts2Result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ACTIVATION_NO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForMultipleProducts1718">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SERIAL_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CONFIG_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VERSION" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SoftwareProductId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="InstallType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_COMPANY_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_EMAIL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_MOBILE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_PHONE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_FAX" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_ADD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_CITY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_STATE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_PIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UPGRADE_SERIAL_NO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForMultipleProducts1718Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ForMultipleProducts1718Result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ACTIVATION_NO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForMultipleProducts17189">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SERIAL_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CONFIG_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VERSION" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SoftwareProductId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="InstallType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_COMPANY_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_EMAIL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_MOBILE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_PHONE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_FAX" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_ADD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_CITY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_STATE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LICENSEE_PIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MACHINE_UNIQUE_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UPGRADE_SERIAL_NO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForMultipleProducts17189Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ForMultipleProducts17189Result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ACTIVATION_NO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save_User_Detail_Record">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SERIAL_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CONFIG_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Financial_Year" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="InstallType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save_User_Detail_RecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Save_User_Detail_RecordResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ACTIVATION_NO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForMultipleProducts3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SERIAL_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CONFIG_NO" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SoftwareProductId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Financial_Year" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="InstallType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForMultipleProducts3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ForMultipleProducts3Result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ACTIVATION_NO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_Check_Machine_Unique_No">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SerialNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineUniqueNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeviceName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_Check_Machine_Unique_NoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Update_Check_Machine_Unique_NoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecordUnInstallation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SERIAL_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CONFIG_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Financial_Year" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="InstallType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Remarks" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecordUnInstallationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RecordUnInstallationResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ACTIVATION_NO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Check_Trial_Serial_No">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Serial_No" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Check_Trial_Serial_NoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Check_Trial_Serial_NoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save_Trial_Records">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TRIAL_CD_SERIAL_NO" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_COMPANY_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_EMAIL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_MOBILE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_PHONE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_FAX" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_ADD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_CITY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_STATE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_PIN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save_Trial_RecordsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Save_Trial_RecordsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save_Trial_Records_New">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TRIAL_CD_SERIAL_NO" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_COMPANY_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_EMAIL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_MOBILE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_PHONE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_FAX" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_ADD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_CITY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_STATE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_PIN" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SEND_EMAIL_SMS" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save_Trial_Records_NewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Save_Trial_Records_NewResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save_Trial_Records_FAYear">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TRIAL_CD_SERIAL_NO" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_COMPANY_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_EMAIL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_MOBILE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_PHONE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_FAX" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_ADD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_CITY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_STATE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TRIAL_PIN" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SEND_EMAIL_SMS" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="FAYear" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save_Trial_Records_FAYearResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Save_Trial_Records_FAYearResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_Trial_Counter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TRIAL_SERIAL_NO" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_Trial_CounterResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Get_LatestUpdates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VERSION_TYPE" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FINANCIAL_YEAR" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_LatestUpdatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Get_LatestUpdatesResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_LatestUpdates_New">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PACKAGE_TYPE" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FINANCIAL_YEAR" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_LatestUpdates_NewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Get_LatestUpdates_NewResult" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="UPDATE_PROCESS_FLAG" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="INACTIVE_FLAG" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForMultipleProducts4">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PACKAGE_TYPE" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FINANCIAL_YEAR" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SoftwareProductId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForMultipleProducts4Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ForMultipleProducts4Result" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="UPDATE_PROCESS_FLAG" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="INACTIVE_FLAG" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableNotification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PACKAGE_TYPE" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FINANCIAL_YEAR" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SoftwareProductId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableNotificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DisableNotificationResult" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="UPDATE_PROCESS_FLAG" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="INACTIVE_FLAG" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SHOW_NOTIFICATION_FLAG" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLatestUpdateWithBlockSW">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PACKAGE_TYPE" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FINANCIAL_YEAR" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SoftwareProductId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SerialNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLatestUpdateWithBlockSWResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLatestUpdateWithBlockSWResult" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="UPDATE_PROCESS_FLAG" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="INACTIVE_FLAG" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SHOW_NOTIFICATION_FLAG" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="BLOCK_SOFTWARE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLatestUpdateWithBlockSerialNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PACKAGE_TYPE" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FINANCIAL_YEAR" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SoftwareProductId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SerialNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLatestUpdateWithBlockSerialNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLatestUpdateWithBlockSerialNoResult" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="UPDATE_PROCESS_FLAG" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="INACTIVE_FLAG" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SHOW_NOTIFICATION_FLAG" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="BLOCK_SOFTWARE" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MISMATCH_SERIAL_NO" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save_Licensed_User_Update_Check_Detail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CHECK_UPDATE_FLAG" type="s1:char" />
+            <s:element minOccurs="0" maxOccurs="1" name="SERIAL_NUMBER" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="USER_VERISON_NUMBER" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="CURRENT_VERISON_NUMBER" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save_Licensed_User_Update_Check_DetailResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Save_Licensed_User_Update_Check_Detail_New">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CHECK_UPDATE_FLAG" type="s1:char" />
+            <s:element minOccurs="0" maxOccurs="1" name="SERIAL_NUMBER" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Financial_Year" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="USER_VERISON_NUMBER" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="CURRENT_VERISON_NUMBER" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save_Licensed_User_Update_Check_Detail_NewResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ForMultipleProducts8">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CHECK_UPDATE_FLAG" type="s1:char" />
+            <s:element minOccurs="0" maxOccurs="1" name="SERIAL_NUMBER" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Financial_Year" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SoftwareProductId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="USER_VERISON_NUMBER" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="CURRENT_VERISON_NUMBER" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForMultipleProducts8Response">
+        <s:complexType />
+      </s:element>
+      <s:element name="Get_Latest_FVU_Version">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Financial_Year" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Latest_FVU_VersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_Latest_FVU_VersionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Latest_Updater_version">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CurrentVersion" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Latest_Updater_versionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Get_Latest_Updater_versionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save_CouponRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COUPON_ID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="COUPON_CODE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="COUPON_VALUE" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="PRODUCT_ID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="START_DATE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="END_DATE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="INACTIVE_FLAG" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="GIFT_FLAG" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="GIFT_WEBSITE_TEXT" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GIFT_MAIL_TEXT" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GIFT_DELIVERY_TEXT" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GIFT_ITEM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="REMARKS" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save_CouponRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Save_CouponRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Trial_flag" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SERIAL_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FINANCIAL_YEAR" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMessagesResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Desc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Link" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Message_id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForMultipleProducts9">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Trial_flag" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SERIAL_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FINANCIAL_YEAR" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SoftwareProductId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForMultipleProducts9Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ForMultipleProducts9Result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Desc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Link" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Message_id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FileID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLinkResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AllowInstallation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SERIAL_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FINANCIAL_YEAR" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SoftwareProductId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CONFIG_NO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AllowInstallationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AllowInstallationResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Allowed_nodes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SERIAL_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FAYear" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SoftwareProductId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Allowed_nodesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Get_Allowed_nodesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Upgrade_to_Multi_user">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SERIAL_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FAYear" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SoftwareProductId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="MU_Serial" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Upgrade_to_Multi_userResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Upgrade_to_Multi_userResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Upgrade_to_Multi_user_AllowNode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SERIAL_NO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FAYear" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SoftwareProductId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="MU_Serial" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Upgrade_to_Multi_user_AllowNodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Upgrade_to_Multi_user_AllowNodeResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMessage" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AllowNode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Campaign">
+        <s:complexType />
+      </s:element>
+      <s:element name="Get_CampaignResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_CampaignResult" type="tns:Campaign" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Campaign">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CampaignName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CampaignText" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Save_Licensed_User_System_Details">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SERIAL_NUMBER" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Version" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Os_Version" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DotNet_Version" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save_Licensed_User_System_DetailsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetYoutubeLink">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VideoCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SerialNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="License_Trial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYoutubeLinkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetYoutubeLinkResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveBlogDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="License_Trial_Version" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SerialNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveBlogDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveBlogDetailsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsBlogEmailExists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="License_Trial_Version" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SerialNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsBlogEmailExistsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsBlogEmailExistsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="char">
+        <s:restriction base="s:unsignedShort" />
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Get_UserDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_UserDetail" />
+  </wsdl:message>
+  <wsdl:message name="Get_UserDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_UserDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_UserDetail_NewSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_UserDetail_New" />
+  </wsdl:message>
+  <wsdl:message name="Get_UserDetail_NewSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_UserDetail_NewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForMultipleProducts5SoapIn">
+    <wsdl:part name="parameters" element="tns:ForMultipleProducts5" />
+  </wsdl:message>
+  <wsdl:message name="ForMultipleProducts5SoapOut">
+    <wsdl:part name="parameters" element="tns:ForMultipleProducts5Response" />
+  </wsdl:message>
+  <wsdl:message name="Is_Allow_For_RegistrationSoapIn">
+    <wsdl:part name="parameters" element="tns:Is_Allow_For_Registration" />
+  </wsdl:message>
+  <wsdl:message name="Is_Allow_For_RegistrationSoapOut">
+    <wsdl:part name="parameters" element="tns:Is_Allow_For_RegistrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForMultipleProducts6SoapIn">
+    <wsdl:part name="parameters" element="tns:ForMultipleProducts6" />
+  </wsdl:message>
+  <wsdl:message name="ForMultipleProducts6SoapOut">
+    <wsdl:part name="parameters" element="tns:ForMultipleProducts6Response" />
+  </wsdl:message>
+  <wsdl:message name="Is_FirstTime_RegSoapIn">
+    <wsdl:part name="parameters" element="tns:Is_FirstTime_Reg" />
+  </wsdl:message>
+  <wsdl:message name="Is_FirstTime_RegSoapOut">
+    <wsdl:part name="parameters" element="tns:Is_FirstTime_RegResponse" />
+  </wsdl:message>
+  <wsdl:message name="Is_FirstTime_Reg_NewSoapIn">
+    <wsdl:part name="parameters" element="tns:Is_FirstTime_Reg_New" />
+  </wsdl:message>
+  <wsdl:message name="Is_FirstTime_Reg_NewSoapOut">
+    <wsdl:part name="parameters" element="tns:Is_FirstTime_Reg_NewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForMultipleProducts1SoapIn">
+    <wsdl:part name="parameters" element="tns:ForMultipleProducts1" />
+  </wsdl:message>
+  <wsdl:message name="ForMultipleProducts1SoapOut">
+    <wsdl:part name="parameters" element="tns:ForMultipleProducts1Response" />
+  </wsdl:message>
+  <wsdl:message name="Save_User_Header_Detail_RecordSoapIn">
+    <wsdl:part name="parameters" element="tns:Save_User_Header_Detail_Record" />
+  </wsdl:message>
+  <wsdl:message name="Save_User_Header_Detail_RecordSoapOut">
+    <wsdl:part name="parameters" element="tns:Save_User_Header_Detail_RecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForMultipleProducts2SoapIn">
+    <wsdl:part name="parameters" element="tns:ForMultipleProducts2" />
+  </wsdl:message>
+  <wsdl:message name="ForMultipleProducts2SoapOut">
+    <wsdl:part name="parameters" element="tns:ForMultipleProducts2Response" />
+  </wsdl:message>
+  <wsdl:message name="ForMultipleProducts1718SoapIn">
+    <wsdl:part name="parameters" element="tns:ForMultipleProducts1718" />
+  </wsdl:message>
+  <wsdl:message name="ForMultipleProducts1718SoapOut">
+    <wsdl:part name="parameters" element="tns:ForMultipleProducts1718Response" />
+  </wsdl:message>
+  <wsdl:message name="ForMultipleProducts17189SoapIn">
+    <wsdl:part name="parameters" element="tns:ForMultipleProducts17189" />
+  </wsdl:message>
+  <wsdl:message name="ForMultipleProducts17189SoapOut">
+    <wsdl:part name="parameters" element="tns:ForMultipleProducts17189Response" />
+  </wsdl:message>
+  <wsdl:message name="Save_User_Detail_RecordSoapIn">
+    <wsdl:part name="parameters" element="tns:Save_User_Detail_Record" />
+  </wsdl:message>
+  <wsdl:message name="Save_User_Detail_RecordSoapOut">
+    <wsdl:part name="parameters" element="tns:Save_User_Detail_RecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForMultipleProducts3SoapIn">
+    <wsdl:part name="parameters" element="tns:ForMultipleProducts3" />
+  </wsdl:message>
+  <wsdl:message name="ForMultipleProducts3SoapOut">
+    <wsdl:part name="parameters" element="tns:ForMultipleProducts3Response" />
+  </wsdl:message>
+  <wsdl:message name="Update_Check_Machine_Unique_NoSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_Check_Machine_Unique_No" />
+  </wsdl:message>
+  <wsdl:message name="Update_Check_Machine_Unique_NoSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_Check_Machine_Unique_NoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecordUnInstallationSoapIn">
+    <wsdl:part name="parameters" element="tns:RecordUnInstallation" />
+  </wsdl:message>
+  <wsdl:message name="RecordUnInstallationSoapOut">
+    <wsdl:part name="parameters" element="tns:RecordUnInstallationResponse" />
+  </wsdl:message>
+  <wsdl:message name="Check_Trial_Serial_NoSoapIn">
+    <wsdl:part name="parameters" element="tns:Check_Trial_Serial_No" />
+  </wsdl:message>
+  <wsdl:message name="Check_Trial_Serial_NoSoapOut">
+    <wsdl:part name="parameters" element="tns:Check_Trial_Serial_NoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Save_Trial_RecordsSoapIn">
+    <wsdl:part name="parameters" element="tns:Save_Trial_Records" />
+  </wsdl:message>
+  <wsdl:message name="Save_Trial_RecordsSoapOut">
+    <wsdl:part name="parameters" element="tns:Save_Trial_RecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Save_Trial_Records_NewSoapIn">
+    <wsdl:part name="parameters" element="tns:Save_Trial_Records_New" />
+  </wsdl:message>
+  <wsdl:message name="Save_Trial_Records_NewSoapOut">
+    <wsdl:part name="parameters" element="tns:Save_Trial_Records_NewResponse" />
+  </wsdl:message>
+  <wsdl:message name="Save_Trial_Records_FAYearSoapIn">
+    <wsdl:part name="parameters" element="tns:Save_Trial_Records_FAYear" />
+  </wsdl:message>
+  <wsdl:message name="Save_Trial_Records_FAYearSoapOut">
+    <wsdl:part name="parameters" element="tns:Save_Trial_Records_FAYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_Trial_CounterSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_Trial_Counter" />
+  </wsdl:message>
+  <wsdl:message name="Update_Trial_CounterSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_Trial_CounterResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_LatestUpdatesSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_LatestUpdates" />
+  </wsdl:message>
+  <wsdl:message name="Get_LatestUpdatesSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_LatestUpdatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_LatestUpdates_NewSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_LatestUpdates_New" />
+  </wsdl:message>
+  <wsdl:message name="Get_LatestUpdates_NewSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_LatestUpdates_NewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForMultipleProducts4SoapIn">
+    <wsdl:part name="parameters" element="tns:ForMultipleProducts4" />
+  </wsdl:message>
+  <wsdl:message name="ForMultipleProducts4SoapOut">
+    <wsdl:part name="parameters" element="tns:ForMultipleProducts4Response" />
+  </wsdl:message>
+  <wsdl:message name="DisableNotificationSoapIn">
+    <wsdl:part name="parameters" element="tns:DisableNotification" />
+  </wsdl:message>
+  <wsdl:message name="DisableNotificationSoapOut">
+    <wsdl:part name="parameters" element="tns:DisableNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestUpdateWithBlockSWSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLatestUpdateWithBlockSW" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestUpdateWithBlockSWSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLatestUpdateWithBlockSWResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestUpdateWithBlockSerialNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLatestUpdateWithBlockSerialNo" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestUpdateWithBlockSerialNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLatestUpdateWithBlockSerialNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Save_Licensed_User_Update_Check_DetailSoapIn">
+    <wsdl:part name="parameters" element="tns:Save_Licensed_User_Update_Check_Detail" />
+  </wsdl:message>
+  <wsdl:message name="Save_Licensed_User_Update_Check_DetailSoapOut">
+    <wsdl:part name="parameters" element="tns:Save_Licensed_User_Update_Check_DetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="Save_Licensed_User_Update_Check_Detail_NewSoapIn">
+    <wsdl:part name="parameters" element="tns:Save_Licensed_User_Update_Check_Detail_New" />
+  </wsdl:message>
+  <wsdl:message name="Save_Licensed_User_Update_Check_Detail_NewSoapOut">
+    <wsdl:part name="parameters" element="tns:Save_Licensed_User_Update_Check_Detail_NewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForMultipleProducts8SoapIn">
+    <wsdl:part name="parameters" element="tns:ForMultipleProducts8" />
+  </wsdl:message>
+  <wsdl:message name="ForMultipleProducts8SoapOut">
+    <wsdl:part name="parameters" element="tns:ForMultipleProducts8Response" />
+  </wsdl:message>
+  <wsdl:message name="Get_Latest_FVU_VersionSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Latest_FVU_Version" />
+  </wsdl:message>
+  <wsdl:message name="Get_Latest_FVU_VersionSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Latest_FVU_VersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Latest_Updater_versionSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Latest_Updater_version" />
+  </wsdl:message>
+  <wsdl:message name="Get_Latest_Updater_versionSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Latest_Updater_versionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Save_CouponRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:Save_CouponRecord" />
+  </wsdl:message>
+  <wsdl:message name="Save_CouponRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:Save_CouponRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessages" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForMultipleProducts9SoapIn">
+    <wsdl:part name="parameters" element="tns:ForMultipleProducts9" />
+  </wsdl:message>
+  <wsdl:message name="ForMultipleProducts9SoapOut">
+    <wsdl:part name="parameters" element="tns:ForMultipleProducts9Response" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLink" />
+  </wsdl:message>
+  <wsdl:message name="GetLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="AllowInstallationSoapIn">
+    <wsdl:part name="parameters" element="tns:AllowInstallation" />
+  </wsdl:message>
+  <wsdl:message name="AllowInstallationSoapOut">
+    <wsdl:part name="parameters" element="tns:AllowInstallationResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Allowed_nodesSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Allowed_nodes" />
+  </wsdl:message>
+  <wsdl:message name="Get_Allowed_nodesSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Allowed_nodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Upgrade_to_Multi_userSoapIn">
+    <wsdl:part name="parameters" element="tns:Upgrade_to_Multi_user" />
+  </wsdl:message>
+  <wsdl:message name="Upgrade_to_Multi_userSoapOut">
+    <wsdl:part name="parameters" element="tns:Upgrade_to_Multi_userResponse" />
+  </wsdl:message>
+  <wsdl:message name="Upgrade_to_Multi_user_AllowNodeSoapIn">
+    <wsdl:part name="parameters" element="tns:Upgrade_to_Multi_user_AllowNode" />
+  </wsdl:message>
+  <wsdl:message name="Upgrade_to_Multi_user_AllowNodeSoapOut">
+    <wsdl:part name="parameters" element="tns:Upgrade_to_Multi_user_AllowNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_CampaignSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Campaign" />
+  </wsdl:message>
+  <wsdl:message name="Get_CampaignSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_CampaignResponse" />
+  </wsdl:message>
+  <wsdl:message name="Save_Licensed_User_System_DetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:Save_Licensed_User_System_Details" />
+  </wsdl:message>
+  <wsdl:message name="Save_Licensed_User_System_DetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:Save_Licensed_User_System_DetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetYoutubeLinkSoapIn">
+    <wsdl:part name="parameters" element="tns:GetYoutubeLink" />
+  </wsdl:message>
+  <wsdl:message name="GetYoutubeLinkSoapOut">
+    <wsdl:part name="parameters" element="tns:GetYoutubeLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveBlogDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveBlogDetails" />
+  </wsdl:message>
+  <wsdl:message name="SaveBlogDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveBlogDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsBlogEmailExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:IsBlogEmailExists" />
+  </wsdl:message>
+  <wsdl:message name="IsBlogEmailExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:IsBlogEmailExistsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RegistrationSoap">
+    <wsdl:operation name="Get_UserDetail">
+      <wsdl:input message="tns:Get_UserDetailSoapIn" />
+      <wsdl:output message="tns:Get_UserDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_UserDetail_New">
+      <wsdl:input message="tns:Get_UserDetail_NewSoapIn" />
+      <wsdl:output message="tns:Get_UserDetail_NewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_UserDetail_New">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">F(n) only all Users</wsdl:documentation>
+      <wsdl:input name="ForMultipleProducts5" message="tns:ForMultipleProducts5SoapIn" />
+      <wsdl:output name="ForMultipleProducts5" message="tns:ForMultipleProducts5SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Is_Allow_For_Registration">
+      <wsdl:input message="tns:Is_Allow_For_RegistrationSoapIn" />
+      <wsdl:output message="tns:Is_Allow_For_RegistrationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Is_Allow_For_Registration">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">F(n) only all Users</wsdl:documentation>
+      <wsdl:input name="ForMultipleProducts6" message="tns:ForMultipleProducts6SoapIn" />
+      <wsdl:output name="ForMultipleProducts6" message="tns:ForMultipleProducts6SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Is_FirstTime_Reg">
+      <wsdl:input message="tns:Is_FirstTime_RegSoapIn" />
+      <wsdl:output message="tns:Is_FirstTime_RegSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Is_FirstTime_Reg_New">
+      <wsdl:input message="tns:Is_FirstTime_Reg_NewSoapIn" />
+      <wsdl:output message="tns:Is_FirstTime_Reg_NewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Is_FirstTime_Reg_New">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">F(n) only all Users</wsdl:documentation>
+      <wsdl:input name="ForMultipleProducts1" message="tns:ForMultipleProducts1SoapIn" />
+      <wsdl:output name="ForMultipleProducts1" message="tns:ForMultipleProducts1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_User_Header_Detail_Record">
+      <wsdl:input message="tns:Save_User_Header_Detail_RecordSoapIn" />
+      <wsdl:output message="tns:Save_User_Header_Detail_RecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_User_Header_Detail_Record">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">F(n) only all Users</wsdl:documentation>
+      <wsdl:input name="ForMultipleProducts2" message="tns:ForMultipleProducts2SoapIn" />
+      <wsdl:output name="ForMultipleProducts2" message="tns:ForMultipleProducts2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_User_Header_Detail_Record">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">F(n) only all Users</wsdl:documentation>
+      <wsdl:input name="ForMultipleProducts1718" message="tns:ForMultipleProducts1718SoapIn" />
+      <wsdl:output name="ForMultipleProducts1718" message="tns:ForMultipleProducts1718SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_User_Header_Detail_Record">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">F(n) only all Users</wsdl:documentation>
+      <wsdl:input name="ForMultipleProducts17189" message="tns:ForMultipleProducts17189SoapIn" />
+      <wsdl:output name="ForMultipleProducts17189" message="tns:ForMultipleProducts17189SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_User_Detail_Record">
+      <wsdl:input message="tns:Save_User_Detail_RecordSoapIn" />
+      <wsdl:output message="tns:Save_User_Detail_RecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_User_Detail_Record">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">F(n) only all Users</wsdl:documentation>
+      <wsdl:input name="ForMultipleProducts3" message="tns:ForMultipleProducts3SoapIn" />
+      <wsdl:output name="ForMultipleProducts3" message="tns:ForMultipleProducts3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Check_Machine_Unique_No">
+      <wsdl:input message="tns:Update_Check_Machine_Unique_NoSoapIn" />
+      <wsdl:output message="tns:Update_Check_Machine_Unique_NoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserDetailRecordUnInstallation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">F(n) only all Users</wsdl:documentation>
+      <wsdl:input name="RecordUnInstallation" message="tns:RecordUnInstallationSoapIn" />
+      <wsdl:output name="RecordUnInstallation" message="tns:RecordUnInstallationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Check_Trial_Serial_No">
+      <wsdl:input message="tns:Check_Trial_Serial_NoSoapIn" />
+      <wsdl:output message="tns:Check_Trial_Serial_NoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_Trial_Records">
+      <wsdl:input message="tns:Save_Trial_RecordsSoapIn" />
+      <wsdl:output message="tns:Save_Trial_RecordsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_Trial_Records_New">
+      <wsdl:input message="tns:Save_Trial_Records_NewSoapIn" />
+      <wsdl:output message="tns:Save_Trial_Records_NewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_Trial_Records_FAYear">
+      <wsdl:input message="tns:Save_Trial_Records_FAYearSoapIn" />
+      <wsdl:output message="tns:Save_Trial_Records_FAYearSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Trial_Counter">
+      <wsdl:input message="tns:Update_Trial_CounterSoapIn" />
+      <wsdl:output message="tns:Update_Trial_CounterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_LatestUpdates">
+      <wsdl:input message="tns:Get_LatestUpdatesSoapIn" />
+      <wsdl:output message="tns:Get_LatestUpdatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_LatestUpdates_New">
+      <wsdl:input message="tns:Get_LatestUpdates_NewSoapIn" />
+      <wsdl:output message="tns:Get_LatestUpdates_NewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_LatestUpdates_New">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">F(n) only all Users</wsdl:documentation>
+      <wsdl:input name="ForMultipleProducts4" message="tns:ForMultipleProducts4SoapIn" />
+      <wsdl:output name="ForMultipleProducts4" message="tns:ForMultipleProducts4SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_LatestUpdates_New">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">F(n) only all Users</wsdl:documentation>
+      <wsdl:input name="DisableNotification" message="tns:DisableNotificationSoapIn" />
+      <wsdl:output name="DisableNotification" message="tns:DisableNotificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_LatestUpdates_New">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">F(n) only all Users</wsdl:documentation>
+      <wsdl:input name="GetLatestUpdateWithBlockSW" message="tns:GetLatestUpdateWithBlockSWSoapIn" />
+      <wsdl:output name="GetLatestUpdateWithBlockSW" message="tns:GetLatestUpdateWithBlockSWSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_LatestUpdates_New">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">F(n) only all Users</wsdl:documentation>
+      <wsdl:input name="GetLatestUpdateWithBlockSerialNo" message="tns:GetLatestUpdateWithBlockSerialNoSoapIn" />
+      <wsdl:output name="GetLatestUpdateWithBlockSerialNo" message="tns:GetLatestUpdateWithBlockSerialNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_Licensed_User_Update_Check_Detail">
+      <wsdl:input message="tns:Save_Licensed_User_Update_Check_DetailSoapIn" />
+      <wsdl:output message="tns:Save_Licensed_User_Update_Check_DetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_Licensed_User_Update_Check_Detail_New">
+      <wsdl:input message="tns:Save_Licensed_User_Update_Check_Detail_NewSoapIn" />
+      <wsdl:output message="tns:Save_Licensed_User_Update_Check_Detail_NewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_Licensed_User_Update_Check_Detail_New">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">F(n) only all Users</wsdl:documentation>
+      <wsdl:input name="ForMultipleProducts8" message="tns:ForMultipleProducts8SoapIn" />
+      <wsdl:output name="ForMultipleProducts8" message="tns:ForMultipleProducts8SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Latest_FVU_Version">
+      <wsdl:input message="tns:Get_Latest_FVU_VersionSoapIn" />
+      <wsdl:output message="tns:Get_Latest_FVU_VersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Latest_Updater_version">
+      <wsdl:input message="tns:Get_Latest_Updater_versionSoapIn" />
+      <wsdl:output message="tns:Get_Latest_Updater_versionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_CouponRecord">
+      <wsdl:input message="tns:Save_CouponRecordSoapIn" />
+      <wsdl:output message="tns:Save_CouponRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <wsdl:input message="tns:GetMessagesSoapIn" />
+      <wsdl:output message="tns:GetMessagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">F(n) only all Users</wsdl:documentation>
+      <wsdl:input name="ForMultipleProducts9" message="tns:ForMultipleProducts9SoapIn" />
+      <wsdl:output name="ForMultipleProducts9" message="tns:ForMultipleProducts9SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLink">
+      <wsdl:input message="tns:GetLinkSoapIn" />
+      <wsdl:output message="tns:GetLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AllowInstallation">
+      <wsdl:input message="tns:AllowInstallationSoapIn" />
+      <wsdl:output message="tns:AllowInstallationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Allowed_nodes">
+      <wsdl:input message="tns:Get_Allowed_nodesSoapIn" />
+      <wsdl:output message="tns:Get_Allowed_nodesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Upgrade_to_Multi_user">
+      <wsdl:input message="tns:Upgrade_to_Multi_userSoapIn" />
+      <wsdl:output message="tns:Upgrade_to_Multi_userSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Upgrade_to_Multi_user">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return two out parameter</wsdl:documentation>
+      <wsdl:input name="Upgrade_to_Multi_user_AllowNode" message="tns:Upgrade_to_Multi_user_AllowNodeSoapIn" />
+      <wsdl:output name="Upgrade_to_Multi_user_AllowNode" message="tns:Upgrade_to_Multi_user_AllowNodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Campaign">
+      <wsdl:input message="tns:Get_CampaignSoapIn" />
+      <wsdl:output message="tns:Get_CampaignSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_Licensed_User_System_Details">
+      <wsdl:input message="tns:Save_Licensed_User_System_DetailsSoapIn" />
+      <wsdl:output message="tns:Save_Licensed_User_System_DetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetYoutubeLink">
+      <wsdl:input message="tns:GetYoutubeLinkSoapIn" />
+      <wsdl:output message="tns:GetYoutubeLinkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveBlogDetails">
+      <wsdl:input message="tns:SaveBlogDetailsSoapIn" />
+      <wsdl:output message="tns:SaveBlogDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsBlogEmailExists">
+      <wsdl:input message="tns:IsBlogEmailExistsSoapIn" />
+      <wsdl:output message="tns:IsBlogEmailExistsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RegistrationSoap" type="tns:RegistrationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Get_UserDetail">
+      <soap:operation soapAction="http://tdsman.com/Get_UserDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_UserDetail_New">
+      <soap:operation soapAction="http://tdsman.com/Get_UserDetail_New" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_UserDetail_New">
+      <soap:operation soapAction="http://tdsman.com/ForMultipleProducts5" style="document" />
+      <wsdl:input name="ForMultipleProducts5">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ForMultipleProducts5">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Is_Allow_For_Registration">
+      <soap:operation soapAction="http://tdsman.com/Is_Allow_For_Registration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Is_Allow_For_Registration">
+      <soap:operation soapAction="http://tdsman.com/ForMultipleProducts6" style="document" />
+      <wsdl:input name="ForMultipleProducts6">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ForMultipleProducts6">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Is_FirstTime_Reg">
+      <soap:operation soapAction="http://tdsman.com/Is_FirstTime_Reg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Is_FirstTime_Reg_New">
+      <soap:operation soapAction="http://tdsman.com/Is_FirstTime_Reg_New" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Is_FirstTime_Reg_New">
+      <soap:operation soapAction="http://tdsman.com/ForMultipleProducts1" style="document" />
+      <wsdl:input name="ForMultipleProducts1">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ForMultipleProducts1">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_User_Header_Detail_Record">
+      <soap:operation soapAction="http://tdsman.com/Save_User_Header_Detail_Record" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_User_Header_Detail_Record">
+      <soap:operation soapAction="http://tdsman.com/ForMultipleProducts2" style="document" />
+      <wsdl:input name="ForMultipleProducts2">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ForMultipleProducts2">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_User_Header_Detail_Record">
+      <soap:operation soapAction="http://tdsman.com/ForMultipleProducts1718" style="document" />
+      <wsdl:input name="ForMultipleProducts1718">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ForMultipleProducts1718">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_User_Header_Detail_Record">
+      <soap:operation soapAction="http://tdsman.com/ForMultipleProducts17189" style="document" />
+      <wsdl:input name="ForMultipleProducts17189">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ForMultipleProducts17189">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_User_Detail_Record">
+      <soap:operation soapAction="http://tdsman.com/Save_User_Detail_Record" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_User_Detail_Record">
+      <soap:operation soapAction="http://tdsman.com/ForMultipleProducts3" style="document" />
+      <wsdl:input name="ForMultipleProducts3">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ForMultipleProducts3">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Check_Machine_Unique_No">
+      <soap:operation soapAction="http://tdsman.com/Update_Check_Machine_Unique_No" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserDetailRecordUnInstallation">
+      <soap:operation soapAction="http://tdsman.com/RecordUnInstallation" style="document" />
+      <wsdl:input name="RecordUnInstallation">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RecordUnInstallation">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Check_Trial_Serial_No">
+      <soap:operation soapAction="http://tdsman.com/Check_Trial_Serial_No" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_Trial_Records">
+      <soap:operation soapAction="http://tdsman.com/Save_Trial_Records" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_Trial_Records_New">
+      <soap:operation soapAction="http://tdsman.com/Save_Trial_Records_New" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_Trial_Records_FAYear">
+      <soap:operation soapAction="http://tdsman.com/Save_Trial_Records_FAYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Trial_Counter">
+      <soap:operation soapAction="http://tdsman.com/Update_Trial_Counter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_LatestUpdates">
+      <soap:operation soapAction="http://tdsman.com/Get_LatestUpdates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_LatestUpdates_New">
+      <soap:operation soapAction="http://tdsman.com/Get_LatestUpdates_New" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_LatestUpdates_New">
+      <soap:operation soapAction="http://tdsman.com/ForMultipleProducts4" style="document" />
+      <wsdl:input name="ForMultipleProducts4">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ForMultipleProducts4">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_LatestUpdates_New">
+      <soap:operation soapAction="http://tdsman.com/DisableNotification" style="document" />
+      <wsdl:input name="DisableNotification">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DisableNotification">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_LatestUpdates_New">
+      <soap:operation soapAction="http://tdsman.com/GetLatestUpdateWithBlockSW" style="document" />
+      <wsdl:input name="GetLatestUpdateWithBlockSW">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetLatestUpdateWithBlockSW">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_LatestUpdates_New">
+      <soap:operation soapAction="http://tdsman.com/GetLatestUpdateWithBlockSerialNo" style="document" />
+      <wsdl:input name="GetLatestUpdateWithBlockSerialNo">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetLatestUpdateWithBlockSerialNo">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_Licensed_User_Update_Check_Detail">
+      <soap:operation soapAction="http://tdsman.com/Save_Licensed_User_Update_Check_Detail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_Licensed_User_Update_Check_Detail_New">
+      <soap:operation soapAction="http://tdsman.com/Save_Licensed_User_Update_Check_Detail_New" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_Licensed_User_Update_Check_Detail_New">
+      <soap:operation soapAction="http://tdsman.com/ForMultipleProducts8" style="document" />
+      <wsdl:input name="ForMultipleProducts8">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ForMultipleProducts8">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Latest_FVU_Version">
+      <soap:operation soapAction="http://tdsman.com/Get_Latest_FVU_Version" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Latest_Updater_version">
+      <soap:operation soapAction="http://tdsman.com/Get_Latest_Updater_version" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_CouponRecord">
+      <soap:operation soapAction="http://tdsman.com/Save_CouponRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <soap:operation soapAction="http://tdsman.com/GetMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <soap:operation soapAction="http://tdsman.com/ForMultipleProducts9" style="document" />
+      <wsdl:input name="ForMultipleProducts9">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ForMultipleProducts9">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLink">
+      <soap:operation soapAction="http://tdsman.com/GetLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllowInstallation">
+      <soap:operation soapAction="http://tdsman.com/AllowInstallation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Allowed_nodes">
+      <soap:operation soapAction="http://tdsman.com/Get_Allowed_nodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Upgrade_to_Multi_user">
+      <soap:operation soapAction="http://tdsman.com/Upgrade_to_Multi_user" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Upgrade_to_Multi_user">
+      <soap:operation soapAction="http://tdsman.com/Upgrade_to_Multi_user_AllowNode" style="document" />
+      <wsdl:input name="Upgrade_to_Multi_user_AllowNode">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Upgrade_to_Multi_user_AllowNode">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Campaign">
+      <soap:operation soapAction="http://tdsman.com/Get_Campaign" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_Licensed_User_System_Details">
+      <soap:operation soapAction="http://tdsman.com/Save_Licensed_User_System_Details" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYoutubeLink">
+      <soap:operation soapAction="http://tdsman.com/GetYoutubeLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBlogDetails">
+      <soap:operation soapAction="http://tdsman.com/SaveBlogDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsBlogEmailExists">
+      <soap:operation soapAction="http://tdsman.com/IsBlogEmailExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RegistrationSoap12" type="tns:RegistrationSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Get_UserDetail">
+      <soap12:operation soapAction="http://tdsman.com/Get_UserDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_UserDetail_New">
+      <soap12:operation soapAction="http://tdsman.com/Get_UserDetail_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_UserDetail_New">
+      <soap12:operation soapAction="http://tdsman.com/ForMultipleProducts5" style="document" />
+      <wsdl:input name="ForMultipleProducts5">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ForMultipleProducts5">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Is_Allow_For_Registration">
+      <soap12:operation soapAction="http://tdsman.com/Is_Allow_For_Registration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Is_Allow_For_Registration">
+      <soap12:operation soapAction="http://tdsman.com/ForMultipleProducts6" style="document" />
+      <wsdl:input name="ForMultipleProducts6">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ForMultipleProducts6">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Is_FirstTime_Reg">
+      <soap12:operation soapAction="http://tdsman.com/Is_FirstTime_Reg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Is_FirstTime_Reg_New">
+      <soap12:operation soapAction="http://tdsman.com/Is_FirstTime_Reg_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Is_FirstTime_Reg_New">
+      <soap12:operation soapAction="http://tdsman.com/ForMultipleProducts1" style="document" />
+      <wsdl:input name="ForMultipleProducts1">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ForMultipleProducts1">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_User_Header_Detail_Record">
+      <soap12:operation soapAction="http://tdsman.com/Save_User_Header_Detail_Record" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_User_Header_Detail_Record">
+      <soap12:operation soapAction="http://tdsman.com/ForMultipleProducts2" style="document" />
+      <wsdl:input name="ForMultipleProducts2">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ForMultipleProducts2">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_User_Header_Detail_Record">
+      <soap12:operation soapAction="http://tdsman.com/ForMultipleProducts1718" style="document" />
+      <wsdl:input name="ForMultipleProducts1718">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ForMultipleProducts1718">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_User_Header_Detail_Record">
+      <soap12:operation soapAction="http://tdsman.com/ForMultipleProducts17189" style="document" />
+      <wsdl:input name="ForMultipleProducts17189">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ForMultipleProducts17189">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_User_Detail_Record">
+      <soap12:operation soapAction="http://tdsman.com/Save_User_Detail_Record" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_User_Detail_Record">
+      <soap12:operation soapAction="http://tdsman.com/ForMultipleProducts3" style="document" />
+      <wsdl:input name="ForMultipleProducts3">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ForMultipleProducts3">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Check_Machine_Unique_No">
+      <soap12:operation soapAction="http://tdsman.com/Update_Check_Machine_Unique_No" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserDetailRecordUnInstallation">
+      <soap12:operation soapAction="http://tdsman.com/RecordUnInstallation" style="document" />
+      <wsdl:input name="RecordUnInstallation">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RecordUnInstallation">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Check_Trial_Serial_No">
+      <soap12:operation soapAction="http://tdsman.com/Check_Trial_Serial_No" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_Trial_Records">
+      <soap12:operation soapAction="http://tdsman.com/Save_Trial_Records" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_Trial_Records_New">
+      <soap12:operation soapAction="http://tdsman.com/Save_Trial_Records_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_Trial_Records_FAYear">
+      <soap12:operation soapAction="http://tdsman.com/Save_Trial_Records_FAYear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Trial_Counter">
+      <soap12:operation soapAction="http://tdsman.com/Update_Trial_Counter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_LatestUpdates">
+      <soap12:operation soapAction="http://tdsman.com/Get_LatestUpdates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_LatestUpdates_New">
+      <soap12:operation soapAction="http://tdsman.com/Get_LatestUpdates_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_LatestUpdates_New">
+      <soap12:operation soapAction="http://tdsman.com/ForMultipleProducts4" style="document" />
+      <wsdl:input name="ForMultipleProducts4">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ForMultipleProducts4">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_LatestUpdates_New">
+      <soap12:operation soapAction="http://tdsman.com/DisableNotification" style="document" />
+      <wsdl:input name="DisableNotification">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DisableNotification">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_LatestUpdates_New">
+      <soap12:operation soapAction="http://tdsman.com/GetLatestUpdateWithBlockSW" style="document" />
+      <wsdl:input name="GetLatestUpdateWithBlockSW">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetLatestUpdateWithBlockSW">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_LatestUpdates_New">
+      <soap12:operation soapAction="http://tdsman.com/GetLatestUpdateWithBlockSerialNo" style="document" />
+      <wsdl:input name="GetLatestUpdateWithBlockSerialNo">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetLatestUpdateWithBlockSerialNo">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_Licensed_User_Update_Check_Detail">
+      <soap12:operation soapAction="http://tdsman.com/Save_Licensed_User_Update_Check_Detail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_Licensed_User_Update_Check_Detail_New">
+      <soap12:operation soapAction="http://tdsman.com/Save_Licensed_User_Update_Check_Detail_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_Licensed_User_Update_Check_Detail_New">
+      <soap12:operation soapAction="http://tdsman.com/ForMultipleProducts8" style="document" />
+      <wsdl:input name="ForMultipleProducts8">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ForMultipleProducts8">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Latest_FVU_Version">
+      <soap12:operation soapAction="http://tdsman.com/Get_Latest_FVU_Version" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Latest_Updater_version">
+      <soap12:operation soapAction="http://tdsman.com/Get_Latest_Updater_version" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_CouponRecord">
+      <soap12:operation soapAction="http://tdsman.com/Save_CouponRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <soap12:operation soapAction="http://tdsman.com/GetMessages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <soap12:operation soapAction="http://tdsman.com/ForMultipleProducts9" style="document" />
+      <wsdl:input name="ForMultipleProducts9">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ForMultipleProducts9">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLink">
+      <soap12:operation soapAction="http://tdsman.com/GetLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllowInstallation">
+      <soap12:operation soapAction="http://tdsman.com/AllowInstallation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Allowed_nodes">
+      <soap12:operation soapAction="http://tdsman.com/Get_Allowed_nodes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Upgrade_to_Multi_user">
+      <soap12:operation soapAction="http://tdsman.com/Upgrade_to_Multi_user" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Upgrade_to_Multi_user">
+      <soap12:operation soapAction="http://tdsman.com/Upgrade_to_Multi_user_AllowNode" style="document" />
+      <wsdl:input name="Upgrade_to_Multi_user_AllowNode">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Upgrade_to_Multi_user_AllowNode">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Campaign">
+      <soap12:operation soapAction="http://tdsman.com/Get_Campaign" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_Licensed_User_System_Details">
+      <soap12:operation soapAction="http://tdsman.com/Save_Licensed_User_System_Details" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYoutubeLink">
+      <soap12:operation soapAction="http://tdsman.com/GetYoutubeLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBlogDetails">
+      <soap12:operation soapAction="http://tdsman.com/SaveBlogDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsBlogEmailExists">
+      <soap12:operation soapAction="http://tdsman.com/IsBlogEmailExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Registration">
+    <wsdl:port name="RegistrationSoap" binding="tns:RegistrationSoap">
+      <soap:address location="http://www.tdsman.com/registration.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RegistrationSoap12" binding="tns:RegistrationSoap12">
+      <soap12:address location="http://www.tdsman.com/registration.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

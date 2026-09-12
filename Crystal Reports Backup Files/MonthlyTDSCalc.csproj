@@ -1,0 +1,895 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C7C4B1AC-E01D-41B6-8D63-7720964F8F1B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MonthlyTDSCalc</RootNamespace>
+    <AssemblyName>SalaryTDS - Monthly Calculator</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>2</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MonthlyTDSCalc.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.MSHierarchicalFlexGridLib, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AxInterop.MSHierarchicalFlexGridLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportAppServer.Prompting, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>bin\Debug\CRYSTAL REPORT DLLS-2010\CrystalDecisions.ReportAppServer.Prompting.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DGControl, Version=1.0.3008.25840, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DGControl.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DGVControl">
+      <HintPath>..\TDSMAN\bin\Debug\DGVControl.dll</HintPath>
+    </Reference>
+    <Reference Include="DriveInfoEx, Version=1.1.3919.27006, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DriveInfoEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\TDSMAN\bin\Debug\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.ADODB">
+      <HintPath>..\TDSMAN\bin\Debug\Interop.ADODB.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.ADOX">
+      <HintPath>..\TDSMAN\bin\Debug\Interop.ADOX.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.JRO">
+      <HintPath>..\TDSMAN\bin\Debug\Interop.JRO.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.TaskScheduler">
+      <HintPath>..\TDSMAN\bin\Debug\Interop.TaskScheduler.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="itextsharp, Version=3.1.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JAYA.VB, Version=1.0.2908.24191, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\JAYA.VB.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\TDSMAN\bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\TDSMAN\bin\Debug\Microsoft.Vbe.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.Compatibility">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MSDATASRC, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\TDSMAN\bin\Debug\MSDATASRC.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\TDSMAN\bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OFFICE, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\TDSMAN\bin\Debug\OFFICE.DLL</HintPath>
+    </Reference>
+    <Reference Include="PDFSignDll">
+      <HintPath>..\DigitalSignature\DigiSignature\DigiSignature\bin\Debug\PDFSignDll.dll</HintPath>
+      <Aliases>global2</Aliases>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\TDSMAN\bin\Debug\stdole.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.OracleClient">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Management">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebDriver">
+      <HintPath>..\TDSMAN\bin\Debug\WebDriver.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\AadhaarFVU.cs" />
+    <Compile Include="Classes\clsPopulateSerial.cs" />
+    <Compile Include="Classes\CommonService.cs" />
+    <Compile Include="Classes\DataGridViewProgressCell.cs" />
+    <Compile Include="Classes\DataGridViewProgressColumn.cs" />
+    <Compile Include="Classes\DateService.cs" />
+    <Compile Include="Classes\DMLService.cs" />
+    <Compile Include="Classes\ExcelService.cs" />
+    <Compile Include="Classes\FingerPrint.cs" />
+    <Compile Include="Classes\FormValidation.cs" />
+    <Compile Include="Classes\GlobalENUM.cs" />
+    <Compile Include="Classes\InputBox.cs" />
+    <Compile Include="Classes\NSDLAccount.cs" />
+    <Compile Include="Classes\NSDLData.cs" />
+    <Compile Include="Classes\PDFSigner.cs" />
+    <Compile Include="Classes\ReportService.cs" />
+    <Compile Include="Classes\ResizeForm.cs" />
+    <Compile Include="Classes\TDSMAN.cs" />
+    <Compile Include="Classes\TracesConnect.cs" />
+    <Compile Include="Classes\TracesData.cs" />
+    <Compile Include="Classes\TracesResponse.cs" />
+    <Compile Include="Classes\TracesValidation.cs" />
+    <Compile Include="Classes\XMLService.cs" />
+    <Compile Include="FormCmn\CmnLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCmn\CmnLogin.designer.cs">
+      <DependentUpon>CmnLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCmn\CmnPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCmn\CmnPopUp.designer.cs">
+      <DependentUpon>CmnPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGen\GenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGen\GenForm.designer.cs">
+      <DependentUpon>GenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMst\MstTANManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMst\MstTANManagement.designer.cs">
+      <DependentUpon>MstTANManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMst\MstCompanyPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMst\MstCompanyPopup.Designer.cs">
+      <DependentUpon>MstCompanyPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMst\MstEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMst\MstEmployee.Designer.cs">
+      <DependentUpon>MstEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPar\MstQuickLinks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPar\MstQuickLinks.Designer.cs">
+      <DependentUpon>MstQuickLinks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPar\MstState.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPar\MstState.designer.cs">
+      <DependentUpon>MstState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPar\ParBuyNow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPar\ParBuyNow.Designer.cs">
+      <DependentUpon>ParBuyNow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRpt\RptDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRpt\RptDialog.designer.cs">
+      <DependentUpon>RptDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRpt\RptPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRpt\RptPreview.designer.cs">
+      <DependentUpon>RptPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSys\mdiMonthlyTDSCalc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSys\mdiMonthlyTDSCalc.Designer.cs">
+      <DependentUpon>mdiMonthlyTDSCalc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSys\SysBackupCompanyWise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSys\SysBackupCompanyWise.Designer.cs">
+      <DependentUpon>SysBackupCompanyWise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSys\SysBuildIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSys\SysBuildIndex.Designer.cs">
+      <DependentUpon>SysBuildIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSys\SysCommercialPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSys\SysCommercialPopup.designer.cs">
+      <DependentUpon>SysCommercialPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSys\SysPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSys\SysPopup.Designer.cs">
+      <DependentUpon>SysPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSys\SysRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSys\SysRegistration.Designer.cs">
+      <DependentUpon>SysRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSys\SysServerDisconnected.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSys\SysServerDisconnected.designer.cs">
+      <DependentUpon>SysServerDisconnected.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSys\SysServerInfoLocal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSys\SysServerInfoLocal.designer.cs">
+      <DependentUpon>SysServerInfoLocal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSys\SysTrialRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSys\SysTrialRegistration.Designer.cs">
+      <DependentUpon>SysTrialRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTrnCalcMonthlyTDS\TrnCalcMonthlyTDSImportExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTrnCalcMonthlyTDS\TrnCalcMonthlyTDSImportExcel.designer.cs">
+      <DependentUpon>TrnCalcMonthlyTDSImportExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTrnCalcMonthlyTDS\TrnCalcTotalTaxableIncome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTrnCalcMonthlyTDS\TrnCalcTotalTaxableIncome.designer.cs">
+      <DependentUpon>TrnCalcTotalTaxableIncome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTrnCalcMonthlyTDS\TrnProjectedForm16.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTrnCalcMonthlyTDS\TrnProjectedForm16.designer.cs">
+      <DependentUpon>TrnProjectedForm16.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTrnCalcMonthlyTDS\TrnForm16ExportData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTrnCalcMonthlyTDS\TrnForm16ExportData.designer.cs">
+      <DependentUpon>TrnForm16ExportData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTrnCalcMonthlyTDS\TrnProcessMonthlyData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTrnCalcMonthlyTDS\TrnProcessMonthlyData.designer.cs">
+      <DependentUpon>TrnProcessMonthlyData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTrnCalcMonthlyTDS\TrnProcessMonthlyDataExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTrnCalcMonthlyTDS\TrnProcessMonthlyDataExport.designer.cs">
+      <DependentUpon>TrnProcessMonthlyDataExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTrnCalcMonthlyTDS\TrnSDCalcTDS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTrnCalcMonthlyTDS\TrnSDCalcTDS.designer.cs">
+      <DependentUpon>TrnSDCalcTDS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTrnCalcMonthlyTDS\TrnTDSFile_BulkImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTrnCalcMonthlyTDS\TrnTDSFile_BulkImport.designer.cs">
+      <DependentUpon>TrnTDSFile_BulkImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTrn\TrnBulkPANNameValidation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTrn\TrnBulkPANNameValidation.designer.cs">
+      <DependentUpon>TrnBulkPANNameValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTrn\TrnHRACalculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTrn\TrnHRACalculator.designer.cs">
+      <DependentUpon>TrnHRACalculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTrn\TrnIncomeTaxCalculateSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTrn\TrnIncomeTaxCalculateSummary.Designer.cs">
+      <DependentUpon>TrnIncomeTaxCalculateSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTrn\TrnProxySettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTrn\TrnProxySettings.designer.cs">
+      <DependentUpon>TrnProxySettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTrn\TrnSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTrn\TrnSplashScreen.Designer.cs">
+      <DependentUpon>TrnSplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTrn\trnTANSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTrn\trnTANSearch.Designer.cs">
+      <DependentUpon>trnTANSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTrn\TrnTaxDeducted.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTrn\TrnTaxDeducted.Designer.cs">
+      <DependentUpon>TrnTaxDeducted.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTrn\TrnTrialMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTrn\TrnTrialMessageBox.Designer.cs">
+      <DependentUpon>TrnTrialMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUtl\UtUpdateApplicationUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUtl\UtUpdateApplicationUpdate.Designer.cs">
+      <DependentUpon>UtUpdateApplicationUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\crCertForm1624QPartBDetails.cs">
+      <DependentUpon>crCertForm1624QPartBDetails.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\crEmployeeWiseMonthlyData.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crEmployeeWiseMonthlyData.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\crLogProcessingDataSummary.cs">
+      <DependentUpon>crLogProcessingDataSummary.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\crLogMonthlyData.cs">
+      <DependentUpon>crLogMonthlyData.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\crLogProjectedForm16.cs">
+      <DependentUpon>crLogProjectedForm16.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\crPrintMonthlyData.cs">
+      <DependentUpon>crPrintMonthlyData.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\crCertForm1624QPartBTabular.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crCertForm1624QPartBTabular.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\crCertForm1624QPartB18191.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crCertForm1624QPartB1819.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Service References\TDSMAN_WEB\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\TDS_CALC_WEB\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormCmn\CmnLogin.resx">
+      <DependentUpon>CmnLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCmn\CmnPopUp.resx">
+      <DependentUpon>CmnPopUp.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGen\GenForm.resx">
+      <DependentUpon>GenForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMst\MstTANManagement.resx">
+      <DependentUpon>MstTANManagement.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMst\MstCompanyPopup.resx">
+      <DependentUpon>MstCompanyPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMst\MstEmployee.resx">
+      <DependentUpon>MstEmployee.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPar\MstQuickLinks.resx">
+      <DependentUpon>MstQuickLinks.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPar\MstState.resx">
+      <DependentUpon>MstState.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPar\ParBuyNow.resx">
+      <DependentUpon>ParBuyNow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRpt\RptDialog.resx">
+      <DependentUpon>RptDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRpt\RptPreview.resx">
+      <DependentUpon>RptPreview.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSys\mdiMonthlyTDSCalc.resx">
+      <DependentUpon>mdiMonthlyTDSCalc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSys\SysBackupCompanyWise.resx">
+      <DependentUpon>SysBackupCompanyWise.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSys\SysBuildIndex.resx">
+      <DependentUpon>SysBuildIndex.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSys\SysCommercialPopup.resx">
+      <DependentUpon>SysCommercialPopup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSys\SysPopup.resx">
+      <DependentUpon>SysPopup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSys\SysRegistration.resx">
+      <DependentUpon>SysRegistration.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSys\SysServerDisconnected.resx">
+      <DependentUpon>SysServerDisconnected.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSys\SysServerInfoLocal.resx">
+      <DependentUpon>SysServerInfoLocal.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSys\SysTrialRegistration.resx">
+      <DependentUpon>SysTrialRegistration.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTrnCalcMonthlyTDS\TrnCalcMonthlyTDSImportExcel.resx">
+      <DependentUpon>TrnCalcMonthlyTDSImportExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTrnCalcMonthlyTDS\TrnCalcTotalTaxableIncome.resx">
+      <DependentUpon>TrnCalcTotalTaxableIncome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTrnCalcMonthlyTDS\TrnProjectedForm16.resx">
+      <DependentUpon>TrnProjectedForm16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTrnCalcMonthlyTDS\TrnForm16ExportData.resx">
+      <DependentUpon>TrnForm16ExportData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTrnCalcMonthlyTDS\TrnProcessMonthlyData.resx">
+      <DependentUpon>TrnProcessMonthlyData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTrnCalcMonthlyTDS\TrnProcessMonthlyDataExport.resx">
+      <DependentUpon>TrnProcessMonthlyDataExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTrnCalcMonthlyTDS\TrnSDCalcTDS.resx">
+      <DependentUpon>TrnSDCalcTDS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTrnCalcMonthlyTDS\TrnTDSFile_BulkImport.resx">
+      <DependentUpon>TrnTDSFile_BulkImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTrn\TrnBulkPANNameValidation.resx">
+      <DependentUpon>TrnBulkPANNameValidation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTrn\TrnHRACalculator.resx">
+      <DependentUpon>TrnHRACalculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTrn\TrnIncomeTaxCalculateSummary.resx">
+      <DependentUpon>TrnIncomeTaxCalculateSummary.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTrn\TrnProxySettings.resx">
+      <DependentUpon>TrnProxySettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTrn\TrnSplashScreen.resx">
+      <DependentUpon>TrnSplashScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTrn\TrnTANSearch.resx">
+      <DependentUpon>trnTANSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTrn\TrnTaxDeducted.resx">
+      <DependentUpon>TrnTaxDeducted.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTrn\TrnTrialMessageBox.resx">
+      <DependentUpon>TrnTrialMessageBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUtl\UtUpdateApplicationUpdate.resx">
+      <DependentUpon>UtUpdateApplicationUpdate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reports\crCertForm1624QPartBDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crCertForm1624QPartBDetails.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\crEmployeeWiseMonthlyData.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crEmployeeWiseMonthlyData.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\crLogProcessingDataSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crLogProcessingDataSummary.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\crLogMonthlyData.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crLogMonthlyData.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\crLogProjectedForm16.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crLogProjectedForm16.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\crPrintMonthlyData.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crPrintMonthlyData.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\crCertForm1624QPartBTabular.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crCertForm1624QPartBTabular.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\crCertForm1624QPartB1819.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crCertForm1624QPartB18191.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.AllowInstallationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.Campaign.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.DisableNotification1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.ForMultipleProducts11.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.ForMultipleProducts17181.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.ForMultipleProducts21.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.ForMultipleProducts31.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.ForMultipleProducts41.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.ForMultipleProducts51.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.ForMultipleProducts61.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.ForMultipleProducts81.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.ForMultipleProducts91.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.GetLatestUpdateWithBlockSW1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.GetLinkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.GetMessagesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.GetYoutubeLinkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.Get_Allowed_nodesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.Get_CampaignResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.Get_LatestUpdatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.Get_LatestUpdates_NewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.Get_Latest_FVU_VersionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.Get_UserDetailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.Get_UserDetail_NewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.Is_Allow_For_RegistrationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.Is_FirstTime_RegResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.Is_FirstTime_Reg_NewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.RecordUnInstallation1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.Save_CouponRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.Save_Licensed_User_System_DetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.Save_Licensed_User_Update_Check_DetailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.Save_Licensed_User_Update_Check_Detail_NewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.Save_Trial_RecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.Save_Trial_Records_FAYearResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.Save_Trial_Records_NewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.Save_User_Detail_RecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.Save_User_Header_Detail_RecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.Upgrade_to_Multi_userResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\MonthlyTDSCalc.TDSMAN_WEB.Upgrade_to_Multi_user_AllowNode1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TDSMAN_WEB\registration.wsdl" />
+    <None Include="Web References\TDS_CALC_WEB\Campaign.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\TDS_CALC_WEB\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\TDS_CALC_WEB\registration.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\TDSMAN_WEB\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TDSMAN_WEB\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TDSMAN_WEB\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TDSMAN_WEB\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <Content Include="salry.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://www.tdsman.com/registration.asmx%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\TDS_CALC_WEB\</RelPath>
+      <UpdateFromURL>http://www.tdsman.com/registration.asmx%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Salary_TDS___Monthly_Calculator_TDS_CALC_WEB_Registration</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

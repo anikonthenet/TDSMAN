@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CC35C79F-98A1-4B29-B3D0-6BBA776CC37F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TMO_PAN_Verification</RootNamespace>
+    <AssemblyName>CA-TDSMAN-PANVerification</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ca-icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.MSHierarchicalFlexGridLib">
+      <HintPath>..\MonthlyTDSCalc\bin\Debug\AxInterop.MSHierarchicalFlexGridLib.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportAppServer.Prompting, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\TDSMAN\bin\Debug\CRYSTAL REPORT DLLS-2010\CrystalDecisions.ReportAppServer.Prompting.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DGControl">
+      <HintPath>..\MonthlyTDSCalc\bin\Debug\DGControl.dll</HintPath>
+    </Reference>
+    <Reference Include="DGVControl">
+      <HintPath>..\TDSMAN\bin\Debug\DGVControl.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\TDSMAN\bin\Debug\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.ADODB">
+      <HintPath>..\TDSMAN\bin\Debug\Interop.ADODB.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.JRO">
+      <HintPath>..\TDSMAN\bin\Debug\Interop.JRO.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\MonthlyTDSCalc\bin\Debug\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="JAYA.VB">
+      <HintPath>..\MonthlyTDSCalc\bin\Debug\JAYA.VB.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\TDSMAN\bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="MSDATASRC, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\TDSMAN\bin\Debug\MSDATASRC.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\TDSMAN\bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PDFSignDll">
+      <HintPath>..\DigitalSignature\DigiSignature\DigiSignature\bin\Debug\PDFSignDll.dll</HintPath>
+      <Aliases>global2</Aliases>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver">
+      <HintPath>..\TDSMAN\bin\Debug\WebDriver.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\clsPopulateSerial.cs" />
+    <Compile Include="Classes\CommonService.cs" />
+    <Compile Include="Classes\DataGridViewProgressCell.cs" />
+    <Compile Include="Classes\DataGridViewProgressColumn.cs" />
+    <Compile Include="Classes\DateService.cs" />
+    <Compile Include="Classes\DMLService.cs" />
+    <Compile Include="Classes\ExcelService.cs" />
+    <Compile Include="Classes\FingerPrint.cs" />
+    <Compile Include="Classes\FormValidation.cs" />
+    <Compile Include="Classes\GlobalENUM.cs" />
+    <Compile Include="Classes\InputBox.cs" />
+    <Compile Include="Classes\NSDLAccount.cs" />
+    <Compile Include="Classes\NSDLData.cs" />
+    <Compile Include="Classes\PDFSigner.cs" />
+    <Compile Include="Classes\ReportService.cs" />
+    <Compile Include="Classes\TDSMAN.cs" />
+    <Compile Include="Classes\TracesConnect.cs" />
+    <Compile Include="Classes\TracesData.cs" />
+    <Compile Include="Classes\TracesResponse.cs" />
+    <Compile Include="Classes\TracesValidation.cs" />
+    <Compile Include="Classes\XMLService.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCmn\CmnLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCmn\CmnLogin.designer.cs">
+      <DependentUpon>CmnLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGen\GenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGen\GenForm.designer.cs">
+      <DependentUpon>GenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRpt\RptDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRpt\RptDialog.designer.cs">
+      <DependentUpon>RptDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRpt\RptPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRpt\RptPreview.designer.cs">
+      <DependentUpon>RptPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSys\SysServerInfoLocal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSys\SysServerInfoLocal.designer.cs">
+      <DependentUpon>SysServerInfoLocal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSys\SysServerInfoNetwork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSys\SysServerInfoNetwork.designer.cs">
+      <DependentUpon>SysServerInfoNetwork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrnBulkPANNameValidation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrnBulkPANNameValidation.designer.cs">
+      <DependentUpon>TrnBulkPANNameValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrnBulkPANNameValidationImprovedVersion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrnBulkPANNameValidationImprovedVersion.designer.cs">
+      <DependentUpon>TrnBulkPANNameValidationImprovedVersion.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormCmn\CmnLogin.resx">
+      <DependentUpon>CmnLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGen\GenForm.resx">
+      <DependentUpon>GenForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRpt\RptDialog.resx">
+      <DependentUpon>RptDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRpt\RptPreview.resx">
+      <DependentUpon>RptPreview.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSys\SysServerInfoLocal.resx">
+      <DependentUpon>SysServerInfoLocal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSys\SysServerInfoNetwork.resx">
+      <DependentUpon>SysServerInfoNetwork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="TrnBulkPANNameValidation.resx">
+      <DependentUpon>TrnBulkPANNameValidation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrnBulkPANNameValidationImprovedVersion.resx">
+      <DependentUpon>TrnBulkPANNameValidationImprovedVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ca-icon.ico" />
+    <Content Include="entds.ico" />
+    <Content Include="tmo.ico" />
+    <Content Include="tmo_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reports\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>if exist "$(TargetPath).locked" del "$(TargetPath).locked"
+if exist "$(TargetPath)" if not exist "$(TargetPath).locked" move "$(TargetPath)" "$(TargetPath).locked"</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
