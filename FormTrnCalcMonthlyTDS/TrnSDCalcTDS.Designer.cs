@@ -999,7 +999,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 307;
-            this.label1.Text = "FA Year";
+            this.label1.Text = "Tax Year";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel3

@@ -118,6 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pctUserManual.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACYAAAAeCAYAAABAFGxuAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAGTSURBVFhH7ZcxSgNhFIRTKJ5DwcbOY5izeAXxENqr
+        IF7B1kZrk16xSqOyKUQxWfL7RnZkXEcIuw+0yIMPnmP+b340xe6glPIvsaFj/+rlYOd8+rZx/FzWjrqD
+        8/DA53qIDR1bp9Ws76UIPPC5HmJDx3ojHT/VpV5E0mFwDufhgS/GdgEbkhDsBaOghqwr+AvtXkzL5cPs
+        83LM232KDUkcvgt6XYrgcttnVWhzLragJIPm3/f1Mzp+w4ZEpVlgZLe9wIZEhVlgZLe9wIZEhVlgZLe9
+        wIZEhVlgZLe9wIZEheB6Mi/vdfxmicHnbuLzbQdGdtsLbEhUmAVGdtsLbEhUmAVGdtsLbEhUmAVGdtsL
+        bEhUCFbfscCGRIVZYGS3vcCGRIVZYGS3vcCGRIVg9R0LbEhUmAVGdtsLbEhUmEXWE+w3aQajx5xn/h/i
+        DPCYvXlSzV0nsSFx0r7gUvFe+RrvlYeuk9iQhCj1mT/Ai5/tamNDEqK0t6QAnnvX47AhCdEwGDdSV7Ys
+        OH8bDF2Pw4Z/Txl8ACBKhF66CxArAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="pctVideoDemo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACYAAAAeCAYAAABAFGxuAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
@@ -135,19 +148,6 @@
         QWAf7DisNijHDxxCuIeaQQbziwL2ByL2bVCCzziMBf3VDDIYLQzYX6/YU0cRT9AKr7eaQQZVccD+tHbj
         LYo+5wJ2V9sp9TQaoHrKGWRQFUfY3dSOG3iGIdi/qVEM4zl60QF7JtrjR/XJUTPI4L/nqn4DUtcV0e0p
         IBMAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="pctUserManual.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACYAAAAeCAYAAABAFGxuAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAGTSURBVFhH7ZcxSgNhFIRTKJ5DwcbOY5izeAXxENqr
-        IF7B1kZrk16xSqOyKUQxWfL7RnZkXEcIuw+0yIMPnmP+b340xe6glPIvsaFj/+rlYOd8+rZx/FzWjrqD
-        8/DA53qIDR1bp9Ws76UIPPC5HmJDx3ojHT/VpV5E0mFwDufhgS/GdgEbkhDsBaOghqwr+AvtXkzL5cPs
-        83LM232KDUkcvgt6XYrgcttnVWhzLragJIPm3/f1Mzp+w4ZEpVlgZLe9wIZEhVlgZLe9wIZEhVlgZLe9
-        wIZEhVlgZLe9wIZEheB6Mi/vdfxmicHnbuLzbQdGdtsLbEhUmAVGdtsLbEhUmAVGdtsLbEhUmAVGdtsL
-        bEhUCFbfscCGRIVZYGS3vcCGRIVZYGS3vcCGRIVg9R0LbEhUmAVGdtsLbEhUmEXWE+w3aQajx5xn/h/i
-        DPCYvXlSzV0nsSFx0r7gUvFe+RrvlYeuk9iQhCj1mT/Ai5/tamNDEqK0t6QAnnvX47AhCdEwGDdSV7Ys
-        OH8bDF2Pw4Z/Txl8ACBKhF66CxArAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="textBox1.Text" xml:space="preserve">

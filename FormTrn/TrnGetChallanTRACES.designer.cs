@@ -628,7 +628,7 @@ namespace TDSMAN.FormTrn
             this.btnCloseTraces.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCloseTraces.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseTraces.ForeColor = System.Drawing.Color.Black;
-            this.btnCloseTraces.Location = new System.Drawing.Point(692, 56);
+            this.btnCloseTraces.Location = new System.Drawing.Point(692, 54);
             this.btnCloseTraces.Name = "btnCloseTraces";
             this.btnCloseTraces.Size = new System.Drawing.Size(47, 20);
             this.btnCloseTraces.TabIndex = 5;
@@ -642,7 +642,7 @@ namespace TDSMAN.FormTrn
             this.btnGoTraces.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGoTraces.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGoTraces.ForeColor = System.Drawing.Color.Black;
-            this.btnGoTraces.Location = new System.Drawing.Point(645, 56);
+            this.btnGoTraces.Location = new System.Drawing.Point(645, 54);
             this.btnGoTraces.Name = "btnGoTraces";
             this.btnGoTraces.Size = new System.Drawing.Size(47, 20);
             this.btnGoTraces.TabIndex = 4;

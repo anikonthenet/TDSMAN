@@ -1501,7 +1501,7 @@ namespace TDSMAN.FormWeb
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(52, 13);
             this.label26.TabIndex = 0;
-            this.label26.Text = "FA Year";
+            this.label26.Text = "Tax Year";
             // 
             // grpCorrectionReqDetails
             // 
@@ -1662,7 +1662,7 @@ namespace TDSMAN.FormWeb
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 0;
-            this.label7.Text = "FA Year";
+            this.label7.Text = "Tax Year";
             // 
             // lnkLogOff
             // 

@@ -118,19 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pctUserManual.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACYAAAAeCAYAAABAFGxuAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAGTSURBVFhH7ZcxSgNhFIRTKJ5DwcbOY5izeAXxENqr
-        IF7B1kZrk16xSqOyKUQxWfL7RnZkXEcIuw+0yIMPnmP+b340xe6glPIvsaFj/+rlYOd8+rZx/FzWjrqD
-        8/DA53qIDR1bp9Ws76UIPPC5HmJDx3ojHT/VpV5E0mFwDufhgS/GdgEbkhDsBaOghqwr+AvtXkzL5cPs
-        83LM232KDUkcvgt6XYrgcttnVWhzLragJIPm3/f1Mzp+w4ZEpVlgZLe9wIZEhVlgZLe9wIZEhVlgZLe9
-        wIZEhVlgZLe9wIZEheB6Mi/vdfxmicHnbuLzbQdGdtsLbEhUmAVGdtsLbEhUmAVGdtsLbEhUmAVGdtsL
-        bEhUCFbfscCGRIVZYGS3vcCGRIVZYGS3vcCGRIVg9R0LbEhUmAVGdtsLbEhUmEXWE+w3aQajx5xn/h/i
-        DPCYvXlSzV0nsSFx0r7gUvFe+RrvlYeuk9iQhCj1mT/Ai5/tamNDEqK0t6QAnnvX47AhCdEwGDdSV7Ys
-        OH8bDF2Pw4Z/Txl8ACBKhF66CxArAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="pctVideoDemo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACYAAAAeCAYAAABAFGxuAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
@@ -150,12 +137,18 @@
         IBMAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="textBox1.Text" xml:space="preserve">
-    <value>1. Please ensure that your Assessing Officer is not giving credit of the challan manually for which you are submitting the challan correction from website.
-2. Please ensure that there is no Online Challan Correction is in progress through TRACES or challan correction in the TDS/TCS statement through NSDL.
-3. Please ensure that no OLTAS challan correction from Assessing Officer is in progress.
-4. Please ensure that no refund request should be initiated against OLTAS challan for which you are submitting the challan correction from website.
-5. Please ensure that your assessing officer should not use the challan for tagging interest/fees for which you are submitting the challan correction from website.</value>
+  <data name="pctUserManual.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACYAAAAeCAYAAABAFGxuAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAGTSURBVFhH7ZcxSgNhFIRTKJ5DwcbOY5izeAXxENqr
+        IF7B1kZrk16xSqOyKUQxWfL7RnZkXEcIuw+0yIMPnmP+b340xe6glPIvsaFj/+rlYOd8+rZx/FzWjrqD
+        8/DA53qIDR1bp9Ws76UIPPC5HmJDx3ojHT/VpV5E0mFwDufhgS/GdgEbkhDsBaOghqwr+AvtXkzL5cPs
+        83LM232KDUkcvgt6XYrgcttnVWhzLragJIPm3/f1Mzp+w4ZEpVlgZLe9wIZEhVlgZLe9wIZEhVlgZLe9
+        wIZEhVlgZLe9wIZEheB6Mi/vdfxmicHnbuLzbQdGdtsLbEhUmAVGdtsLbEhUmAVGdtsLbEhUmAVGdtsL
+        bEhUCFbfscCGRIVZYGS3vcCGRIVZYGS3vcCGRIVg9R0LbEhUmAVGdtsLbEhUmEXWE+w3aQajx5xn/h/i
+        DPCYvXlSzV0nsSFx0r7gUvFe+RrvlYeuk9iQhCj1mT/Ai5/tamNDEqK0t6QAnnvX47AhCdEwGDdSV7Ys
+        OH8bDF2Pw4Z/Txl8ACBKhF66CxArAAAAAElFTkSuQmCC
+</value>
   </data>
   <data name="btnCaptchaRefresh.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -192,7 +185,19 @@
         +LN7cBoy5P8fBSSylsruUQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="bgWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="pgTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>117, 17</value>
+  </metadata>
+  <metadata name="pgTimerGrid.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>322, 17</value>
+  </metadata>
+  <metadata name="bgWorkerLoadCaptcha.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>442, 17</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>57</value>
+    <value>43</value>
   </metadata>
 </root>

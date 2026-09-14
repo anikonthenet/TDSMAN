@@ -353,7 +353,7 @@ namespace TDSMAN.FormMst
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(848, 23);
             this.label14.TabIndex = 186;
-            this.label14.Text = "Select the Remittance, FA Year and click Go to view the rates";
+            this.label14.Text = "Select the Remittance, Tax Year and click Go to view the rates";
             this.label14.UseMnemonic = false;
             // 
             // btnGo
@@ -378,7 +378,7 @@ namespace TDSMAN.FormMst
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(60, 13);
             this.label11.TabIndex = 179;
-            this.label11.Text = "FA Year :";
+            this.label11.Text = "Tax Year :";
             // 
             // cmbRemittance
             // 

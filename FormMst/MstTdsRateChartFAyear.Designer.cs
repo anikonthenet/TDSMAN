@@ -29,8 +29,8 @@ namespace TDSMAN.FormMst
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MstTdsRateChartFAyear));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label114 = new System.Windows.Forms.Label();
             this.txtCompanyNameSearch = new System.Windows.Forms.TextBox();
             this.label117 = new System.Windows.Forms.Label();
@@ -225,7 +225,7 @@ namespace TDSMAN.FormMst
             this.label117.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label117.Location = new System.Drawing.Point(8, 24);
             this.label117.Name = "label117";
-            this.label117.Size = new System.Drawing.Size(74, 13);
+            this.label117.Size = new System.Drawing.Size(50, 13);
             this.label117.TabIndex = 157;
             this.label117.Text = "Tax Year";
             // 
@@ -343,9 +343,9 @@ namespace TDSMAN.FormMst
             this.cmbFAYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFAYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFAYear.FormattingEnabled = true;
-            this.cmbFAYear.Location = new System.Drawing.Point(617, 43);
+            this.cmbFAYear.Location = new System.Drawing.Point(624, 43);
             this.cmbFAYear.Name = "cmbFAYear";
-            this.cmbFAYear.Size = new System.Drawing.Size(188, 21);
+            this.cmbFAYear.Size = new System.Drawing.Size(181, 21);
             this.cmbFAYear.TabIndex = 187;
             this.cmbFAYear.SelectedIndexChanged += new System.EventHandler(this.cmbFAYear_SelectedIndexChanged);
             // 
@@ -378,11 +378,11 @@ namespace TDSMAN.FormMst
             this.label11.BackColor = System.Drawing.SystemColors.Control;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label11.Location = new System.Drawing.Point(552, 45);
+            this.label11.Location = new System.Drawing.Point(554, 47);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 13);
+            this.label11.Size = new System.Drawing.Size(66, 13);
             this.label11.TabIndex = 179;
-            this.label11.Text = "FA Year :";
+            this.label11.Text = "Tax Year :";
             // 
             // cmbSection
             // 
@@ -462,28 +462,28 @@ namespace TDSMAN.FormMst
             this.dgvGrid.AllowUserToResizeRows = false;
             this.dgvGrid.BackgroundColor = System.Drawing.Color.Lavender;
             this.dgvGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dgvGrid.GridColor = System.Drawing.SystemColors.Control;
             this.dgvGrid.Location = new System.Drawing.Point(8, 182);
             this.dgvGrid.MultiSelect = false;
             this.dgvGrid.Name = "dgvGrid";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvGrid.RowHeadersWidth = 20;
             this.dgvGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

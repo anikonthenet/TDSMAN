@@ -29,8 +29,8 @@ namespace TDSMAN.FormTrn
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrnRegularReturn_26_27));
             this.tbcCompany = new System.Windows.Forms.TabControl();
             this.tbpBasicInformation = new System.Windows.Forms.TabPage();
@@ -265,6 +265,7 @@ namespace TDSMAN.FormTrn
             this.btnSaveForm26Q27QExcessOneCrore = new System.Windows.Forms.Button();
             this.label60 = new System.Windows.Forms.Label();
             this.pnlDeducteeEntry = new System.Windows.Forms.Panel();
+            this.lblDDSectionPAN4thCharAllowed = new System.Windows.Forms.Label();
             this.txtDeducteeTaxDeducted = new System.Windows.Forms.TextBox();
             this.lblDDSectionDisplay = new System.Windows.Forms.Label();
             this.pnlDeducteeRate = new System.Windows.Forms.TableLayoutPanel();
@@ -491,7 +492,6 @@ namespace TDSMAN.FormTrn
             this.cntxtMnuChallanDownload = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuChallanDownloadTRACES = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuChallanDownloadIncomeTax = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblDDSectionPAN4thCharAllowed = new System.Windows.Forms.Label();
             this.grpSort.SuspendLayout();
             this.grpSearch.SuspendLayout();
             this.grpButton.SuspendLayout();
@@ -3647,6 +3647,15 @@ namespace TDSMAN.FormTrn
             this.pnlDeducteeEntry.Size = new System.Drawing.Size(347, 372);
             this.pnlDeducteeEntry.TabIndex = 2;
             // 
+            // lblDDSectionPAN4thCharAllowed
+            // 
+            this.lblDDSectionPAN4thCharAllowed.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDDSectionPAN4thCharAllowed.Location = new System.Drawing.Point(123, 82);
+            this.lblDDSectionPAN4thCharAllowed.Name = "lblDDSectionPAN4thCharAllowed";
+            this.lblDDSectionPAN4thCharAllowed.Size = new System.Drawing.Size(1, 13);
+            this.lblDDSectionPAN4thCharAllowed.TabIndex = 273;
+            this.lblDDSectionPAN4thCharAllowed.Visible = false;
+            // 
             // txtDeducteeTaxDeducted
             // 
             this.txtDeducteeTaxDeducted.BackColor = System.Drawing.Color.White;
@@ -5185,28 +5194,28 @@ namespace TDSMAN.FormTrn
             this.dgvShowErrFile.AllowUserToResizeRows = false;
             this.dgvShowErrFile.BackgroundColor = System.Drawing.Color.Lavender;
             this.dgvShowErrFile.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvShowErrFile.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvShowErrFile.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvShowErrFile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvShowErrFile.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvShowErrFile.GridColor = System.Drawing.SystemColors.Control;
             this.dgvShowErrFile.Location = new System.Drawing.Point(6, 9);
             this.dgvShowErrFile.MultiSelect = false;
             this.dgvShowErrFile.Name = "dgvShowErrFile";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvShowErrFile.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvShowErrFile.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvShowErrFile.RowHeadersWidth = 20;
             this.dgvShowErrFile.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvShowErrFile.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -6388,7 +6397,7 @@ namespace TDSMAN.FormTrn
             this.mnuChallanDownloadTRACES,
             this.mnuChallanDownloadIncomeTax});
             this.cntxtMnuChallanDownload.Name = "cntxtMnuChallanDownload";
-            this.cntxtMnuChallanDownload.Size = new System.Drawing.Size(181, 48);
+            this.cntxtMnuChallanDownload.Size = new System.Drawing.Size(181, 70);
             // 
             // mnuChallanDownloadTRACES
             // 
@@ -6406,15 +6415,6 @@ namespace TDSMAN.FormTrn
             this.mnuChallanDownloadIncomeTax.Size = new System.Drawing.Size(180, 22);
             this.mnuChallanDownloadIncomeTax.Text = "from Income Tax";
             this.mnuChallanDownloadIncomeTax.Click += new System.EventHandler(this.MnuChallanDownloadIncomeTax_Click);
-            // 
-            // lblDDSectionPAN4thCharAllowed
-            // 
-            this.lblDDSectionPAN4thCharAllowed.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDDSectionPAN4thCharAllowed.Location = new System.Drawing.Point(123, 82);
-            this.lblDDSectionPAN4thCharAllowed.Name = "lblDDSectionPAN4thCharAllowed";
-            this.lblDDSectionPAN4thCharAllowed.Size = new System.Drawing.Size(1, 13);
-            this.lblDDSectionPAN4thCharAllowed.TabIndex = 273;
-            this.lblDDSectionPAN4thCharAllowed.Visible = false;
             // 
             // TrnRegularReturn_26_27
             // 

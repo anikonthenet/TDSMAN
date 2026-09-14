@@ -1118,6 +1118,12 @@
     <Compile Include="FormUtl\UtWebUpdateImages.designer.cs">
       <DependentUpon>UtWebUpdateImages.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormWeb\TrnChallanStatusTraces_26_27.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWeb\TrnChallanStatusTraces_26_27.designer.cs">
+      <DependentUpon>TrnChallanStatusTraces_26_27.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormWeb\TrnDirectLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2046,6 +2052,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUtl\UtWebUpdateImages.resx">
       <DependentUpon>UtWebUpdateImages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormWeb\TrnChallanStatusTraces_26_27.resx">
+      <DependentUpon>TrnChallanStatusTraces_26_27.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FormWeb\TrnDirectLogin.resx">
       <DependentUpon>TrnDirectLogin.cs</DependentUpon>

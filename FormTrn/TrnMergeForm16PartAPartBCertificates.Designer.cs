@@ -211,7 +211,7 @@
             this.lblFAYear.Name = "lblFAYear";
             this.lblFAYear.Size = new System.Drawing.Size(56, 15);
             this.lblFAYear.TabIndex = 0;
-            this.lblFAYear.Text = "FA Year";
+            this.lblFAYear.Text = "Tax Year";
             // 
             // grpPartA
             // 

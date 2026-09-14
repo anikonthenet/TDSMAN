@@ -30,6 +30,7 @@ namespace TDSMAN.FormWeb
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrnTracesChallanCorrection));
             this.grpLoginDetails = new System.Windows.Forms.GroupBox();
+            this.lnkPost2526 = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.btnViewRequest = new System.Windows.Forms.Button();
@@ -67,7 +68,6 @@ namespace TDSMAN.FormWeb
             this.pBar = new System.Windows.Forms.ProgressBar();
             this.pctVideoDemo = new System.Windows.Forms.PictureBox();
             this.pctUserManual = new System.Windows.Forms.PictureBox();
-            this.lnkPost2526 = new System.Windows.Forms.LinkLabel();
             this.grpSort.SuspendLayout();
             this.grpSearch.SuspendLayout();
             this.grpButton.SuspendLayout();
@@ -100,6 +100,7 @@ namespace TDSMAN.FormWeb
             this.BtnSave.BackColor = System.Drawing.Color.Lavender;
             this.BtnSave.Location = new System.Drawing.Point(418, 13);
             this.BtnSave.Text = "&Login";
+            this.BtnSave.Visible = false;
             this.BtnSave.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // grpSearch
@@ -204,6 +205,18 @@ namespace TDSMAN.FormWeb
             this.grpLoginDetails.Size = new System.Drawing.Size(829, 350);
             this.grpLoginDetails.TabIndex = 0;
             this.grpLoginDetails.TabStop = false;
+            // 
+            // lnkPost2526
+            // 
+            this.lnkPost2526.AutoSize = true;
+            this.lnkPost2526.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkPost2526.Location = new System.Drawing.Point(558, 35);
+            this.lnkPost2526.Name = "lnkPost2526";
+            this.lnkPost2526.Size = new System.Drawing.Size(103, 13);
+            this.lnkPost2526.TabIndex = 215;
+            this.lnkPost2526.TabStop = true;
+            this.lnkPost2526.Text = "goto IT Act 2025";
+            this.lnkPost2526.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkPost2526_LinkClicked);
             // 
             // panel1
             // 
@@ -633,18 +646,6 @@ namespace TDSMAN.FormWeb
             this.pctUserManual.TabStop = false;
             this.pctUserManual.Tag = "User Manual";
             this.pctUserManual.Click += new System.EventHandler(this.pctUserManual_Click);
-            // 
-            // lnkPost2526
-            // 
-            this.lnkPost2526.AutoSize = true;
-            this.lnkPost2526.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkPost2526.Location = new System.Drawing.Point(558, 35);
-            this.lnkPost2526.Name = "lnkPost2526";
-            this.lnkPost2526.Size = new System.Drawing.Size(103, 13);
-            this.lnkPost2526.TabIndex = 215;
-            this.lnkPost2526.TabStop = true;
-            this.lnkPost2526.Text = "goto IT Act 2025";
-            this.lnkPost2526.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkPost2526_LinkClicked);
             // 
             // TrnTracesChallanCorrection
             // 

@@ -1,6 +1,6 @@
 namespace TDSMAN.FormWeb
 {
-    partial class TrnChallanStatusTraces
+    partial class TrnChallanStatusTraces_26_27
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace TDSMAN.FormWeb
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrnChallanStatusTraces));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrnChallanStatusTraces_26_27));
             this.grpDownloadList = new System.Windows.Forms.GroupBox();
             this.gbCINpp = new System.Windows.Forms.GroupBox();
             this.mskChallanToDate = new System.Windows.Forms.MaskedTextBox();
@@ -88,6 +88,7 @@ namespace TDSMAN.FormWeb
             this.grpLoginDetails = new System.Windows.Forms.GroupBox();
             this.lstDeducteeHelp = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lnkPre2627 = new System.Windows.Forms.LinkLabel();
             this.txtTANNo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtUserID = new System.Windows.Forms.TextBox();
@@ -103,7 +104,6 @@ namespace TDSMAN.FormWeb
             this.pctVideoDemo = new System.Windows.Forms.PictureBox();
             this.pctUserManual = new System.Windows.Forms.PictureBox();
             this.bgWorkerLoadCaptcha = new System.ComponentModel.BackgroundWorker();
-            this.lnkPost2526 = new System.Windows.Forms.LinkLabel();
             this.grpSort.SuspendLayout();
             this.grpSearch.SuspendLayout();
             this.grpButton.SuspendLayout();
@@ -749,7 +749,7 @@ namespace TDSMAN.FormWeb
             this.grpChallanDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpChallanDetails.Location = new System.Drawing.Point(20, 133);
             this.grpChallanDetails.Name = "grpChallanDetails";
-            this.grpChallanDetails.Size = new System.Drawing.Size(914, 184);
+            this.grpChallanDetails.Size = new System.Drawing.Size(914, 296);
             this.grpChallanDetails.TabIndex = 223;
             this.grpChallanDetails.TabStop = false;
             this.grpChallanDetails.Text = "Challan Details";
@@ -761,20 +761,20 @@ namespace TDSMAN.FormWeb
             this.dgvStatementList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStatementList.Location = new System.Drawing.Point(7, 18);
             this.dgvStatementList.Name = "dgvStatementList";
-            this.dgvStatementList.Size = new System.Drawing.Size(898, 156);
+            this.dgvStatementList.Size = new System.Drawing.Size(898, 271);
             this.dgvStatementList.TabIndex = 14;
-            this.dgvStatementList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStatementList_CellClick);
             // 
             // grpConsumptionDetails
             // 
             this.grpConsumptionDetails.Controls.Add(this.dgvConsumption);
             this.grpConsumptionDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpConsumptionDetails.Location = new System.Drawing.Point(18, 320);
+            this.grpConsumptionDetails.Location = new System.Drawing.Point(18, 419);
             this.grpConsumptionDetails.Name = "grpConsumptionDetails";
-            this.grpConsumptionDetails.Size = new System.Drawing.Size(914, 115);
+            this.grpConsumptionDetails.Size = new System.Drawing.Size(914, 16);
             this.grpConsumptionDetails.TabIndex = 224;
             this.grpConsumptionDetails.TabStop = false;
             this.grpConsumptionDetails.Text = "Consumption Details";
+            this.grpConsumptionDetails.Visible = false;
             // 
             // dgvConsumption
             // 
@@ -832,7 +832,7 @@ namespace TDSMAN.FormWeb
             this.lstDeducteeHelp.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstDeducteeHelp.FormattingEnabled = true;
             this.lstDeducteeHelp.ItemHeight = 16;
-            this.lstDeducteeHelp.Location = new System.Drawing.Point(135, 57);
+            this.lstDeducteeHelp.Location = new System.Drawing.Point(135, 59);
             this.lstDeducteeHelp.Name = "lstDeducteeHelp";
             this.lstDeducteeHelp.Size = new System.Drawing.Size(552, 148);
             this.lstDeducteeHelp.TabIndex = 219;
@@ -842,7 +842,7 @@ namespace TDSMAN.FormWeb
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lnkPost2526);
+            this.groupBox1.Controls.Add(this.lnkPre2627);
             this.groupBox1.Controls.Add(this.txtTANNo);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtUserID);
@@ -856,6 +856,18 @@ namespace TDSMAN.FormWeb
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Enter TRACES Login Details";
+            // 
+            // lnkPre2627
+            // 
+            this.lnkPre2627.AutoSize = true;
+            this.lnkPre2627.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkPre2627.Location = new System.Drawing.Point(541, 21);
+            this.lnkPre2627.Name = "lnkPre2627";
+            this.lnkPre2627.Size = new System.Drawing.Size(103, 13);
+            this.lnkPre2627.TabIndex = 240;
+            this.lnkPre2627.TabStop = true;
+            this.lnkPre2627.Text = "goto IT Act 1961";
+            this.lnkPre2627.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkPre2627_LinkClicked);
             // 
             // txtTANNo
             // 
@@ -934,7 +946,7 @@ namespace TDSMAN.FormWeb
             this.btnCaptchaRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCaptchaRefresh.BackgroundImage")));
             this.btnCaptchaRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnCaptchaRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCaptchaRefresh.Location = new System.Drawing.Point(526, 117);
+            this.btnCaptchaRefresh.Location = new System.Drawing.Point(544, 117);
             this.btnCaptchaRefresh.Name = "btnCaptchaRefresh";
             this.btnCaptchaRefresh.Size = new System.Drawing.Size(38, 40);
             this.btnCaptchaRefresh.TabIndex = 199;
@@ -944,9 +956,9 @@ namespace TDSMAN.FormWeb
             // 
             // picCaptcha
             // 
-            this.picCaptcha.Location = new System.Drawing.Point(334, 102);
+            this.picCaptcha.Location = new System.Drawing.Point(269, 102);
             this.picCaptcha.Name = "picCaptcha";
-            this.picCaptcha.Size = new System.Drawing.Size(187, 55);
+            this.picCaptcha.Size = new System.Drawing.Size(269, 55);
             this.picCaptcha.TabIndex = 197;
             this.picCaptcha.TabStop = false;
             // 
@@ -1008,23 +1020,11 @@ namespace TDSMAN.FormWeb
             // 
             this.bgWorkerLoadCaptcha.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgWorkerLoadCaptcha_DoWork);
             // 
-            // lnkPost2526
-            // 
-            this.lnkPost2526.AutoSize = true;
-            this.lnkPost2526.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkPost2526.Location = new System.Drawing.Point(541, 21);
-            this.lnkPost2526.Name = "lnkPost2526";
-            this.lnkPost2526.Size = new System.Drawing.Size(103, 13);
-            this.lnkPost2526.TabIndex = 240;
-            this.lnkPost2526.TabStop = true;
-            this.lnkPost2526.Text = "goto IT Act 2025";
-            this.lnkPost2526.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkPost2526_LinkClicked);
-            // 
-            // TrnChallanStatusTraces
+            // TrnChallanStatusTraces_26_27
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(1050, 575);
-            this.Name = "TrnChallanStatusTraces";
+            this.ClientSize = new System.Drawing.Size(1084, 575);
+            this.Name = "TrnChallanStatusTraces_26_27";
             this.Activated += new System.EventHandler(this.TrnChallanStatusTraces_Activated);
             this.Load += new System.EventHandler(this.TrnChallanStatusTraces_Load);
             this.grpSort.ResumeLayout(false);
@@ -1138,6 +1138,6 @@ namespace TDSMAN.FormWeb
         private System.Windows.Forms.PictureBox pctVideoDemo;
         private System.Windows.Forms.PictureBox pctUserManual;
         private System.ComponentModel.BackgroundWorker bgWorkerLoadCaptcha;
-        private System.Windows.Forms.LinkLabel lnkPost2526;
+        private System.Windows.Forms.LinkLabel lnkPre2627;
     }
 }

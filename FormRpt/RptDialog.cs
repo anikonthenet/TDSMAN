@@ -7162,7 +7162,7 @@ namespace TDSMAN.FormRpt
 
                         // DATE
                         grpFromToDate.Visible = true;
-                        grpFromToDate.Text = "Date range should be of same FA Year";
+                        grpFromToDate.Text = "Date range should be of same Tax Year";
                         grpFromToDate.Font = new Font(grpFromToDate.Font, FontStyle.Bold);
                         // FROM DATE
                         strSQL = "SELECT " + cmnService.J_SQLDBFormat("START_DATE", J_SQLColFormat.DateFormatDDMMYYYY) + " AS START_DATE " +
@@ -7898,7 +7898,7 @@ namespace TDSMAN.FormRpt
                         // COMPANY
                         lblComboTitle2.Visible = true;
                         cmbCombo2.Visible = true;
-                        //// FA YEAR
+                        //// Tax Year
                         //lblComboTitle3.Visible = true;
                         //cmbCombo3.Visible = true;
 
@@ -7911,7 +7911,7 @@ namespace TDSMAN.FormRpt
 
                         // DATE
                         grpFromToDate.Visible = true;
-                        grpFromToDate.Text = "Date range should be of same FA Year";
+                        grpFromToDate.Text = "Date range should be of same Tax Year";
                         grpFromToDate.Font = new Font(grpFromToDate.Font, FontStyle.Bold);
                         // FROM DATE
                         strSQL = "SELECT " + cmnService.J_SQLDBFormat("START_DATE", J_SQLColFormat.DateFormatDDMMYYYY) + " AS START_DATE " +
@@ -13708,7 +13708,7 @@ namespace TDSMAN.FormRpt
                 objtxtValue = (TextObject)rptcls.ReportDefinition.Sections[2].ReportObjects["txtFromToDate"];
                 objtxtValue.Text = "Salary Amount (Form 16) : " + strTotalSalaryText;
 
-                string[,] strArry = { { "txtReportTitle", "Salary & TDS Summary - FA Year : " + cmbCombo2.Text + "\n Company : " + cmbCombo1.Text } };
+                string[,] strArry = { { "txtReportTitle", "Salary & TDS Summary - Tax Year : " + cmbCombo2.Text + "\n Company : " + cmbCombo1.Text } };
                 rptService.J_PreviewReport(ref rptcls, this, strQueryString, strArry);
                 //--
             }
@@ -13837,11 +13837,11 @@ namespace TDSMAN.FormRpt
                 //objtxtValue = (TextObject)rptcls.ReportDefinition.Sections[2].ReportObjects["txtFromToDate"];
                 //objtxtValue.Text = "Salary Amount (Form 16) : " + strTotalSalaryText;
 
-                //string[,] strArry = { { "txtReportTitle", "Salary & TDS Summary - FA Year : " + cmbCombo2.Text + "\n Company : " + cmbCombo1.Text } };
+                //string[,] strArry = { { "txtReportTitle", "Salary & TDS Summary - Tax Year : " + cmbCombo2.Text + "\n Company : " + cmbCombo1.Text } };
                 //rptService.J_PreviewReport(ref rptcls, this, strQueryString, strArry);
                 //--
                 //RDLC Report
-                string[,] strArryQuarterWiseDeducteeReport = { {"HeaderCompanyName", "Salary & TDS Summary - FA Year : " + cmbCombo2.Text },
+                string[,] strArryQuarterWiseDeducteeReport = { {"HeaderCompanyName", "Salary & TDS Summary - Tax Year : " + cmbCombo2.Text },
                                               {"HeaderReportCD", "Company : " + cmbCombo1.Text },
                                               { "HeaderLeft", "Salary Amount (Form 16) : " + strTotalSalaryText}
                                                 };
@@ -17403,7 +17403,7 @@ namespace TDSMAN.FormRpt
                     {
                         //RDLC Report for Form 26Q
                         string[,] strArryQuarterWiseDeducteeReport = { {"HeaderCompanyName", cmnService.J_Left(cmbCombo1.Text, cmbCombo1.Text.Length - 12) },
-                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " FA Year : " + Convert.ToString(dmlService.J_ExecSqlReturnScalar(strFAYearSQL)) },
+                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " Tax Year : " + Convert.ToString(dmlService.J_ExecSqlReturnScalar(strFAYearSQL)) },
                                               {"HeaderReportCD", "Detailed Deductee Transactions" },
                                               {"HeaderFromToDate", "From : " + mskFromDate.Text + " To : " + mskToDate.Text }
                                                 };
@@ -17597,7 +17597,7 @@ namespace TDSMAN.FormRpt
                     else
                     {
                         string[,] strArryQuarterWiseDeducteeReport = { {"HeaderCompanyName", cmnService.J_Left(cmbCombo1.Text, cmbCombo1.Text.Length - 12) },
-                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " FA Year : " + Convert.ToString(dmlService.J_ExecSqlReturnScalar(strFAYearSQL)) },
+                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " Tax Year : " + Convert.ToString(dmlService.J_ExecSqlReturnScalar(strFAYearSQL)) },
                                               {"HeaderReportCD", "Detailed Employee Transactions" },
                                               {"HeaderFromToDate", "From : " + mskFromDate.Text + " To : " + mskToDate.Text }
                                                 };
@@ -17934,7 +17934,7 @@ namespace TDSMAN.FormRpt
                     {
                         //RDLC Report
                         string[,] strArryQuarterWiseDeducteeReport = { {"HeaderCompanyName", cmnService.J_Left(cmbCombo1.Text, cmbCombo1.Text.Length - 12) },
-                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " FA Year : " + cmbCombo2.Text },
+                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " Tax Year : " + cmbCombo2.Text },
                                               {"HeaderReportCD", "Deductee Transactions - " + strSummaryFilter + " Summary"  },
                                               {"HeaderFromToDate", strSortText }
                                                 };
@@ -18202,7 +18202,7 @@ namespace TDSMAN.FormRpt
                     {
                         //RDLC Report
                         string[,] strArryQuarterWiseDeducteeReport = { {"HeaderCompanyName", cmnService.J_Left(cmbCombo1.Text, cmbCombo1.Text.Length - 12) },
-                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " FA Year : " + cmbCombo2.Text },
+                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " Tax Year : " + cmbCombo2.Text },
                                               {"HeaderReportCD", "Employee Transactions - " + strSummaryFilter + " Summary"  },
                                               {"HeaderFromToDate", strSortText }
                                                 };
@@ -19027,7 +19027,7 @@ namespace TDSMAN.FormRpt
                 //-----------------------------------------
                 strFormNo = strFormNo.Replace("'", ""); strQtr = strQtr.Replace("'", "");
                 string[,] strArryChallanReport = { {"HeaderCompanyName", cmnService.J_Left(cmbCombo1.Text, cmbCombo1.Text.Length - 12) },
-                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " FA Year : " + cmbCombo2.Text },
+                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " Tax Year : " + cmbCombo2.Text },
                                               {"HeaderReportCD", "Challan Report" },
                                               {"HeaderFromToDate", "FORMS : " + strFormNo },
                                               {"HeaderQtr", "QUARTERS : " + strQtr }
@@ -19775,7 +19775,7 @@ namespace TDSMAN.FormRpt
                 //////string[,] strArry = { { "txtReportTitle", "Challan Query Report" } };
                 //////rptService.J_PreviewReport(ref rptcls, this, strQueryString, strArry);
                 string[,] strArryChallanWiseReport = { {"HeaderCompanyName", cmnService.J_Left(cmbCombo1.Text, cmbCombo1.Text.Length - 12) },
-                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " FA Year : " + cmbCombo2.Text },
+                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " Tax Year : " + cmbCombo2.Text },
                                               {"HeaderReportCD", "Challan Query Report" },
                                               {"FooterSelectedForm", "Form No. : " + strFormNo },
                                               {"FooterSelectedQtr", "Quarter : " + strQtr },
@@ -20707,7 +20707,7 @@ namespace TDSMAN.FormRpt
                     else
                     {
                         string[,] strArryChallanWiseReport = { {"HeaderCompanyName", cmnService.J_Left(cmbCombo1.Text, cmbCombo1.Text.Length - 12) },
-                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " FA Year : " + cmbCombo2.Text },
+                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " Tax Year : " + cmbCombo2.Text },
                                               {"HeaderReportCD", "Deductee Wise Query Report" },
                                               {"HeaderFromToDate", "From Date : " + mskFromDate.Text + " To :" + mskToDate.Text },
                                               {"FooterSelectedForm", "Form No. : " + strFormNoSelected },
@@ -20918,7 +20918,7 @@ namespace TDSMAN.FormRpt
                     else
                     {
                         string[,] strArryChallanWiseReport = { {"HeaderCompanyName", cmnService.J_Left(cmbCombo1.Text, cmbCombo1.Text.Length - 12) },
-                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " FA Year : " + cmbCombo2.Text },
+                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " Tax Year : " + cmbCombo2.Text },
                                               {"HeaderReportCD", "Employee Wise Query Report" },
                                               {"HeaderFromToDate", "From Date : " + mskFromDate.Text + " To :" + mskToDate.Text },
                                               {"FooterSelectedForm", "Form No. : " + strFormNoSelected },
@@ -21648,7 +21648,7 @@ namespace TDSMAN.FormRpt
                 //rptService.J_PreviewReport(ref rptcls, this, strQueryString, strArry);
                 //-----------------------------------------------------------------------------------
                 string[,] strArryChallanReport = { {"HeaderCompanyName", cmnService.J_Left(cmbCombo1.Text, cmbCombo1.Text.Length - 12) },
-                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " FA Year : " + cmbCombo2.Text },
+                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " Tax Year : " + cmbCombo2.Text },
                                               {"HeaderLeft", strReportHeaderLeft },
                                               {"HeaderReportCD", "Deductions - " + strSummaryFilter + " Summary" }
                                                 };
@@ -22248,7 +22248,7 @@ namespace TDSMAN.FormRpt
             //rptService.J_PreviewReport(ref rptcls, this, strQueryString, strArry);
 
             string[,] strArryChallanReport = { {"HeaderCompanyName", "All Deductors Summary"  },
-                                              {"HeaderReportCD", "FA Year : " + cmbCombo1.Text }
+                                              {"HeaderReportCD", "Tax Year : " + cmbCombo1.Text }
                                                 };
             J_PreviewReportRDLC("\\Reports\\crAllDeductionSummary.rdlc", "DataSet1", strQueryString, strArryChallanReport);
 
@@ -22456,7 +22456,7 @@ namespace TDSMAN.FormRpt
             //string[,] strArry = { { "txtReportTitle", "File Generation Log" } };
             //rptService.J_PreviewReport(ref rptcls, this, strQueryString, strArry);
             string[,] strArryFileGenerationLogReport = { {"ReportHeader", "File Generation Log" },
-                                              {"HeaderFaYear", "FA Year : " + cmbCombo1.Text} 
+                                              {"HeaderFaYear", "Tax Year : " + cmbCombo1.Text} 
                                                 };
             J_PreviewReportRDLC("\\Reports\\crFileGenerationLog.rdlc", "DataSet1", strQueryString, strArryFileGenerationLogReport);
             //---------------------------
@@ -41396,7 +41396,7 @@ namespace TDSMAN.FormRpt
                     ////rptService.J_PreviewReport(ref rptcls, this, strQueryString, strArry);
 
                     string[,] strArryQuarterWiseComapanyDetailsReport = { {"HeaderCompanyName", cmbCombo1.Text },
-                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " FA Year : " + cmbCombo2.Text },
+                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " Tax Year : " + cmbCombo2.Text },
                                               {"HeaderReportCD", "Form No. " + cmbCombo3.Text + " - Company Details" },
                                               {"HeaderFromToDate", "From : " + TdsMan.T_ReturnQuarterStartDate(cmbCombo4.Text, cmbCombo2.Text) + " To : " + TdsMan.T_ReturnQuarterEndDate(cmbCombo4.Text, cmbCombo2.Text) },
                                               {"NO_OF_CHALLAN", Convert.ToString(dmlService.J_ExecSqlReturnScalar(strNoOfChallanSQL)) },
@@ -41492,7 +41492,7 @@ namespace TDSMAN.FormRpt
                         //string[,] strArry = { { "txtReportTitle", "Form No. " + cmbCombo3.Text + " - Challan Details" } };
                         //rptService.J_PreviewReport(ref rptcls, this, strQueryString, strArry);
                         string[,] strArry = { {"HeaderCompanyName", cmbCombo1.Text },
-                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " FA Year : " + cmbCombo2.Text },
+                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " Tax Year : " + cmbCombo2.Text },
                                               {"HeaderReportCD", "Form No. " + cmbCombo3.Text + " - Challan Details" },
                                               {"HeaderFromToDate", "From : " + TdsMan.T_ReturnQuarterStartDate(cmbCombo4.Text, cmbCombo2.Text) + " To : " + TdsMan.T_ReturnQuarterEndDate(cmbCombo4.Text, cmbCombo2.Text) }
                                                 };
@@ -41570,7 +41570,7 @@ namespace TDSMAN.FormRpt
                         //objtxtValue.Text = "From : " + TdsMan.T_ReturnQuarterStartDate(cmbCombo4.Text, cmbCombo2.Text) + " To : " + TdsMan.T_ReturnQuarterEndDate(cmbCombo4.Text, cmbCombo2.Text);
 
                         string[,] strArry = { {"HeaderCompanyName", cmbCombo1.Text },
-                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " FA Year : " + cmbCombo2.Text },
+                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " Tax Year : " + cmbCombo2.Text },
                                               {"HeaderReportCD", "Form No. " + cmbCombo3.Text + " - Challan Details" },
                                               {"HeaderFromToDate", "From : " + TdsMan.T_ReturnQuarterStartDate(cmbCombo4.Text, cmbCombo2.Text) + " To : " + TdsMan.T_ReturnQuarterEndDate(cmbCombo4.Text, cmbCombo2.Text) }
                                                 };// "Form No. " + cmbCombo3.Text + " - Challan Details" } };
@@ -41813,7 +41813,7 @@ namespace TDSMAN.FormRpt
                         else
                         {
                             string[,] strArryQuarterWiseDeducteeReport = { {"HeaderCompanyName", cmbCombo1.Text },
-                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " FA Year : " + cmbCombo2.Text },
+                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " Tax Year : " + cmbCombo2.Text },
                                               {"HeaderReportCD", "Form No. " + cmbCombo3.Text + " - Deductee Details" },
                                               {"HeaderFromToDate", "From : " + TdsMan.T_ReturnQuarterStartDate(cmbCombo4.Text, cmbCombo2.Text) + " To : " + TdsMan.T_ReturnQuarterEndDate(cmbCombo4.Text, cmbCombo2.Text) }
                                                 };
@@ -42014,7 +42014,7 @@ namespace TDSMAN.FormRpt
                         {
                             //RDLC Report for Form 26Q
                             string[,] strArryQuarterWiseDeducteeReport = { {"HeaderCompanyName", cmbCombo1.Text },
-                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " FA Year : " + cmbCombo2.Text },
+                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " Tax Year : " + cmbCombo2.Text },
                                               {"HeaderReportCD", "Form No. " + cmbCombo3.Text + " - Deductee Details" },
                                               {"HeaderFromToDate", "From : " + TdsMan.T_ReturnQuarterStartDate(cmbCombo4.Text, cmbCombo2.Text) + " To : " + TdsMan.T_ReturnQuarterEndDate(cmbCombo4.Text, cmbCombo2.Text) }
                                                 };
@@ -42181,7 +42181,7 @@ namespace TDSMAN.FormRpt
                     else
                     {
                         string[,] strArrySalaryDetailsReport = { {"HeaderCompanyName", cmbCombo1.Text },
-                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " FA Year : " + cmbCombo2.Text },
+                                              {"HeaderTANFaYear", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " Tax Year : " + cmbCombo2.Text },
                                               {"HeaderReportCD", "Form No. " + cmbCombo3.Text + " - Salary Details" }
                                                 };
                         //
@@ -54653,7 +54653,7 @@ namespace TDSMAN.FormRpt
                     //string[,] strArry = { { "txtReportTitle", "Form No. " + FormNo + " - Company Details" } };
                     //rptService.J_PreviewReport(ref rptcls, this, strQueryString, strArry);
                     string[,] strArryQuarterWiseComapanyDetailsReport = { {"HeaderCompanyName", grdvDescription.SelectedCells[5].Value.ToString() },
-                                              {"HeaderTANFaYear", "TAN : " + grdvDescription.SelectedCells[6].Value.ToString() + " FA Year : " + grdvDescription.SelectedCells[2].Value.ToString() },
+                                              {"HeaderTANFaYear", "TAN : " + grdvDescription.SelectedCells[6].Value.ToString() + " Tax Year : " + grdvDescription.SelectedCells[2].Value.ToString() },
                                               {"HeaderReportCD", "Form No. " + FormNo + " - Company Details" },
                                               {"HeaderFromToDate", "From : " + TdsMan.T_ReturnQuarterStartDate(Quarter, FinancialYear) + " To : " + TdsMan.T_ReturnQuarterEndDate(Quarter, FinancialYear)},
                                               {"NO_OF_CHALLAN", Convert.ToString(dmlService.J_ExecSqlReturnScalar(strNoOfChallanSQL)) },
@@ -54753,7 +54753,7 @@ namespace TDSMAN.FormRpt
                     //rptService.J_PreviewReport(ref rptcls, this, strQueryString, strArry);
 
                     string[,] strArry = { {"HeaderCompanyName", grdvDescription.SelectedCells[5].Value.ToString() },
-                                              {"HeaderTANFaYear", "TAN : " + grdvDescription.SelectedCells[6].Value.ToString() + " FA Year : " + grdvDescription.SelectedCells[2].Value.ToString() },
+                                              {"HeaderTANFaYear", "TAN : " + grdvDescription.SelectedCells[6].Value.ToString() + " Tax Year : " + grdvDescription.SelectedCells[2].Value.ToString() },
                                               {"HeaderReportCD", "Form No. " + FormNo + " - Challan Details" },
                                               {"HeaderFromToDate", "From : " + TdsMan.T_ReturnQuarterStartDate(Quarter, FinancialYear) + " To : " + TdsMan.T_ReturnQuarterEndDate(Quarter, FinancialYear) }
                                                 };
@@ -54927,7 +54927,7 @@ namespace TDSMAN.FormRpt
                         else
                         {
                             string[,] strArryQuarterWiseDeducteeReport = { {"HeaderCompanyName", grdvDescription.SelectedCells[5].Value.ToString() },
-                                              {"HeaderTANFaYear", "TAN : " + grdvDescription.SelectedCells[6].Value.ToString() + " FA Year : " + grdvDescription.SelectedCells[2].Value.ToString() },
+                                              {"HeaderTANFaYear", "TAN : " + grdvDescription.SelectedCells[6].Value.ToString() + " Tax Year : " + grdvDescription.SelectedCells[2].Value.ToString() },
                                               {"HeaderReportCD", "Form No. " + FormNo + " - Deductee Details" },
                                               {"HeaderFromToDate", "From : " + TdsMan.T_ReturnQuarterStartDate(Quarter, FinancialYear) + " To : " + TdsMan.T_ReturnQuarterEndDate(Quarter, FinancialYear) }
                                                 };
@@ -55056,7 +55056,7 @@ namespace TDSMAN.FormRpt
                         else
                         {
                             string[,] strArryQuarterWiseDeducteeReport = { {"HeaderCompanyName", grdvDescription.SelectedCells[5].Value.ToString() },
-                                              {"HeaderTANFaYear", "TAN : " + grdvDescription.SelectedCells[6].Value.ToString() + " FA Year : " + grdvDescription.SelectedCells[2].Value.ToString() },
+                                              {"HeaderTANFaYear", "TAN : " + grdvDescription.SelectedCells[6].Value.ToString() + " Tax Year : " + grdvDescription.SelectedCells[2].Value.ToString() },
                                               {"HeaderReportCD", "Form No. " + FormNo + " - Deductee Details" },
                                               {"HeaderFromToDate", "From : " + TdsMan.T_ReturnQuarterStartDate(Quarter, FinancialYear) + " To : " + TdsMan.T_ReturnQuarterEndDate(Quarter, FinancialYear) }
                                                 };
@@ -55201,7 +55201,7 @@ namespace TDSMAN.FormRpt
                     else
                     {
                         string[,] strArrySalaryDetailsReport = { {"HeaderCompanyName", grdvDescription.SelectedCells[5].Value.ToString() },
-                                              {"HeaderTANFaYear", "TAN : " + grdvDescription.SelectedCells[6].Value.ToString()  + " FA Year : " + grdvDescription.SelectedCells[2].Value.ToString()  },
+                                              {"HeaderTANFaYear", "TAN : " + grdvDescription.SelectedCells[6].Value.ToString()  + " Tax Year : " + grdvDescription.SelectedCells[2].Value.ToString()  },
                                               {"HeaderReportCD", "Form No. " + FormNo + " - Salary Details" }
                                                 };
                         //
@@ -64346,7 +64346,7 @@ namespace TDSMAN.FormRpt
                     //rptcls = (ReportClass)rptDeducteeWithoutChallanSectionWise;
                     strReportTitle = "Deductee Entries Without Challan [Section Wise]";
                     string[,] strArryChallanReport = { {"ReportHeaderCaption", strReportTitle },
-                                              {"ReportHeaderTANDetails", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " FA Year : " + cmbCombo2.Text + " Qtr : " + cmbCombo4.Text},
+                                              {"ReportHeaderTANDetails", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " Tax Year : " + cmbCombo2.Text + " Qtr : " + cmbCombo4.Text},
                                               {"ReportHeaderCompany", cmnService.J_Left(cmbCombo1.Text, cmbCombo1.Text.Length - 12) }
                                                 };
                     J_PreviewReportRDLC("\\Reports\\crDeducteeWithoutChallanSectionWise.rdlc", "DataSet1", strSQL, strArryChallanReport);
@@ -64358,7 +64358,7 @@ namespace TDSMAN.FormRpt
 
                     strReportTitle = "Deductee Entries Without Challan [Month Wise]";
                     string[,] strArryChallanReport = { {"ReportHeaderCaption", strReportTitle },
-                                              {"ReportHeaderTANDetails", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " FA Year : " + cmbCombo2.Text + " Qtr : " + cmbCombo4.Text},
+                                              {"ReportHeaderTANDetails", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " Tax Year : " + cmbCombo2.Text + " Qtr : " + cmbCombo4.Text},
                                               {"ReportHeaderCompany", cmnService.J_Left(cmbCombo1.Text, cmbCombo1.Text.Length - 12) }
                                                 };
                     J_PreviewReportRDLC("\\Reports\\crDeducteeWithoutChallanMonthWise.rdlc", "DataSet1", strSQL, strArryChallanReport);
@@ -64369,7 +64369,7 @@ namespace TDSMAN.FormRpt
                     //rptcls = (ReportClass)rptDeducteeWithoutChallanDeducteeWise; 
                     strReportTitle = "Deductee Entries Without Challan [Deductee Wise]";
                     string[,] strArryChallanReport = { {"ReportHeaderCaption", strReportTitle },
-                                              {"ReportHeaderTANDetails", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " FA Year : " + cmbCombo2.Text + " Qtr : " + cmbCombo4.Text},
+                                              {"ReportHeaderTANDetails", "TAN : " + cmnService.J_Left(cmnService.J_Right(cmbCombo1.Text,11),10) + " Tax Year : " + cmbCombo2.Text + " Qtr : " + cmbCombo4.Text},
                                               {"ReportHeaderCompany", cmnService.J_Left(cmbCombo1.Text, cmbCombo1.Text.Length - 12) }
                                                 };
                     J_PreviewReportRDLC("\\Reports\\crDeducteeWithoutChallanDeducteeWise.rdlc", "DataSet1", strSQL, strArryChallanReport);
@@ -64486,7 +64486,7 @@ namespace TDSMAN.FormRpt
                 rptcls = (ReportClass)rptEmployeesSDNotFound;
                 //
                 objtxtValue = (TextObject)rptcls.ReportDefinition.Sections[1].ReportObjects["txtReportTitle"];
-                objtxtValue.Text = cmbCombo1.Text + " FA Year : " + cmbCombo2.Text;
+                objtxtValue.Text = cmbCombo1.Text + " Tax Year : " + cmbCombo2.Text;
                 //
                 string[,] strArry = { { "txtReportTitle", "Employee(s) - Missing in Salary Details" } };
                 rptService.J_PreviewReport(ref rptcls, this, strQueryString, strArry);
@@ -64600,13 +64600,13 @@ namespace TDSMAN.FormRpt
                 //rptcls = (ReportClass)rptEmployeesSDNotFound;
                 ////
                 //objtxtValue = (TextObject)rptcls.ReportDefinition.Sections[1].ReportObjects["txtReportTitle"];
-                //objtxtValue.Text = cmbCombo1.Text + " FA Year : " + cmbCombo2.Text;
+                //objtxtValue.Text = cmbCombo1.Text + " Tax Year : " + cmbCombo2.Text;
                 ////
                 //string[,] strArry = { { "txtReportTitle", "Employee(s) - Missing in Salary Details" } };
                 //rptService.J_PreviewReport(ref rptcls, this, strQueryString, strArry);
                 strSQL = "SELECT FA_YEAR FROM MST_ASSESSMENT WHERE ASST_ID = " + TDSMAN.Classes.TDSMAN.T_pFinancialYearId;
                 string[,] strArryEmployeesSDNotFoundReport = {{"ReportHeader", "Employee(s) - Missing in Salary Details" },
-                                              {"HeaderFaYear", "FA Year : " + Convert.ToString(dmlService.J_ExecSqlReturnScalar(strSQL))}
+                                              {"HeaderFaYear", "Tax Year : " + Convert.ToString(dmlService.J_ExecSqlReturnScalar(strSQL))}
                                                 };
                 J_PreviewReportRDLC("\\Reports\\crEmployeesSDNotFound.rdlc", "DataSet1", strQueryString, strArryEmployeesSDNotFoundReport);
             }

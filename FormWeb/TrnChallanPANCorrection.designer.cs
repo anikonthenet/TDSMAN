@@ -646,7 +646,7 @@ namespace TDSMAN.FormWeb
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 0;
-            this.label6.Text = "FA Year";
+            this.label6.Text = "Tax Year";
             // 
             // groupBox1
             // 

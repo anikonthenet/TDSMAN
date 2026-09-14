@@ -22,13 +22,13 @@ using TDSMAN.FormSys;
 
 namespace TDSMAN.FormWeb
 {
-    public partial class TrnChallanStatusTraces : TDSMAN.FormGen.GenForm
+    public partial class TrnChallanStatusTraces_26_27 : TDSMAN.FormGen.GenForm
     {
 
         ResizeForm _form_resize;
 
         #region System Generated Code
-        public TrnChallanStatusTraces()
+        public TrnChallanStatusTraces_26_27()
         {
             InitializeComponent();
             //--
@@ -39,7 +39,7 @@ namespace TDSMAN.FormWeb
         }
         #endregion
 
-        #region Objects & Variables declaration
+        #region Objects & Variables decleration
 
         TracesConnect objAccount = new TracesConnect();
         CommonService cmnService = new CommonService();
@@ -114,9 +114,6 @@ namespace TDSMAN.FormWeb
             lblTitle.Text = "Challan Status Query";
             //
             ClearControls();
-            //
-            if (TDSMAN.Classes.TDSMAN.T_pPackageFAYear < (int)Software_Version.FY2026_27)
-                lnkPost2526.Visible = false;
         }
         #endregion
 
@@ -464,30 +461,58 @@ namespace TDSMAN.FormWeb
 
             // CREATE DOWNLOAD BUTTON & PROGRESSBAR CONTROL COLUMNS 
             //------------------------------------------------------------
-            if (enmRecType == enmRequestType.CINPP || enmRecType == enmRequestType.CINParticulars)
+            if (enmRecType == enmRequestType.CINPP ||
+    enmRecType == enmRequestType.CINParticulars)
             {
-                dgvStatementList.Columns[0].Width = 0;
-                dgvStatementList.Columns[0].Visible = false;
+                //---------------------------------------------------------
+                // 0 - BSR Code
+                //---------------------------------------------------------
+                dgvStatementList.Columns[0].Width = 110;
                 dgvStatementList.Columns[0].ReadOnly = true;
-                dgvStatementList.Columns[1].Width = 0;
-                dgvStatementList.Columns[1].Visible = false;
+                dgvStatementList.Columns[0].AutoSizeMode =
+                    DataGridViewAutoSizeColumnMode.Fill;
+
+                //---------------------------------------------------------
+                // 1 - Date of Deposit
+                //---------------------------------------------------------
+                dgvStatementList.Columns[1].Width = 130;
                 dgvStatementList.Columns[1].ReadOnly = true;
-                dgvStatementList.Columns[2].Width = 130;
+                dgvStatementList.Columns[1].AutoSizeMode =
+                    DataGridViewAutoSizeColumnMode.Fill;
+
+                //---------------------------------------------------------
+                // 2 - Challan Serial Number
+                //---------------------------------------------------------
+                dgvStatementList.Columns[2].Width = 150;
                 dgvStatementList.Columns[2].ReadOnly = true;
-                dgvStatementList.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvStatementList.Columns[2].AutoSizeMode =
+                    DataGridViewAutoSizeColumnMode.Fill;
 
-                dgvStatementList.Columns[3].Width = 150;
-                dgvStatementList.Columns[3].ReadOnly = true; 
-                dgvStatementList.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                //---------------------------------------------------------
+                // 3 - Challan Amount
+                //---------------------------------------------------------
+                dgvStatementList.Columns[3].Width = 130;
+                dgvStatementList.Columns[3].ReadOnly = true;
+
+                dgvStatementList.Columns[3].HeaderCell.Style.Alignment =
+                    DataGridViewContentAlignment.MiddleRight;
+
+                dgvStatementList.Columns[3].DefaultCellStyle.Alignment =
+                    DataGridViewContentAlignment.MiddleRight;
+
+                dgvStatementList.Columns[3].SortMode =
+                    DataGridViewColumnSortMode.NotSortable;
+
+                dgvStatementList.Columns[3].AutoSizeMode =
+                    DataGridViewAutoSizeColumnMode.Fill;
+
+                //---------------------------------------------------------
+                // 4 - Challan Status
+                //---------------------------------------------------------
+                dgvStatementList.Columns[4].Width = 120;
                 dgvStatementList.Columns[4].ReadOnly = true;
-                dgvStatementList.Columns[5].ReadOnly = true;
-                dgvStatementList.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-                dgvStatementList.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                dgvStatementList.Columns[6].SortMode = DataGridViewColumnSortMode.NotSortable;         
-                dgvStatementList.Columns[6].ReadOnly = false;
-
-
-                
+                dgvStatementList.Columns[4].AutoSizeMode =
+                    DataGridViewAutoSizeColumnMode.Fill;
             }
 
             if (enmRecType == enmRequestType.BINPP)
@@ -511,38 +536,79 @@ namespace TDSMAN.FormWeb
                                
                 
             }
-                                   
-           
-            DataGridViewLinkColumn btn = new DataGridViewLinkColumn();
-            dgvStatementList.Columns.Add(btn);
-            btn.HeaderText = "";
-            //btn.Text = "View Details";
-            btn.Text = "Match Challan Amount";
-            btn.Name = "lnkDetails";
-            btn.Width = 150;
+            //DataGridViewLinkColumn btn = new DataGridViewLinkColumn();
+            //dgvStatementList.Columns.Add(btn);
+            //btn.HeaderText = "";
+            ////btn.Text = "View Details";
+            //btn.Text = "Match Challan Amount";
+            //btn.Name = "lnkDetails";
+            //btn.Width = 150;
+            ////------------------------------------------------------------
+            //btn.UseColumnTextForLinkValue = true;
+            ////------------------------------------------------------------
+            //DataGridViewProgressColumn prg = new DataGridViewProgressColumn();
+            //dgvStatementList.Columns.Add(prg);
+            //prg.Name = "";
+            //prg.ProgressBarColor = Color.LightGreen;
             //------------------------------------------------------------
-            btn.UseColumnTextForLinkValue = true;
+            // OLD Match Challan Amount + Progress columns
+            // Required only for BIN processing
             //------------------------------------------------------------
-            DataGridViewProgressColumn prg = new DataGridViewProgressColumn();
-            dgvStatementList.Columns.Add(prg);
-            prg.Name = "";
-            prg.ProgressBarColor = Color.LightGreen;
+            if (enmRecType == enmRequestType.BINPP || enmRecType == enmRequestType.BINParticulars)
+            {
+                DataGridViewLinkColumn btn =
+                    new DataGridViewLinkColumn();
+
+                dgvStatementList.Columns.Add(btn);
+
+                btn.HeaderText = "";
+                btn.Text = "Match Challan Amount";
+                btn.Name = "lnkDetails";
+                btn.Width = 150;
+                btn.UseColumnTextForLinkValue = true;
+
+                //---------------------------------------------------------
+
+                DataGridViewProgressColumn prg =
+                    new DataGridViewProgressColumn();
+
+                dgvStatementList.Columns.Add(prg);
+
+                prg.Name = "";
+                prg.ProgressBarColor = Color.LightGreen;
+            }
             //------------------------------------------------------------
             // SET FOCUS 
             if (dsRecords.Rows.Count > 0)
             {
+                //if (enmRecType == enmRequestType.CINPP || enmRecType == enmRequestType.CINParticulars)
+                //{
+                //    dgvStatementList.Rows[0].Cells[6].Selected = true;
+
+                //    dgvStatementList.CurrentCell = dgvStatementList.Rows[0].Cells[6];
+                //    dgvStatementList.BeginEdit(true);
+                //}
+                //else
+                //{
+                //    dgvStatementList.Rows[0].Cells[3].Selected = true;
+
+                //    dgvStatementList.CurrentCell = dgvStatementList.Rows[0].Cells[3];
+                //    dgvStatementList.BeginEdit(true);
+                //}
                 if (enmRecType == enmRequestType.CINPP || enmRecType == enmRequestType.CINParticulars)
                 {
-                    dgvStatementList.Rows[0].Cells[6].Selected = true;
+                    dgvStatementList.Rows[0].Cells[0].Selected = true;
 
-                    dgvStatementList.CurrentCell = dgvStatementList.Rows[0].Cells[6];
-                    dgvStatementList.BeginEdit(true);
+                    dgvStatementList.CurrentCell =
+                        dgvStatementList.Rows[0].Cells[0];
                 }
                 else
                 {
                     dgvStatementList.Rows[0].Cells[3].Selected = true;
 
-                    dgvStatementList.CurrentCell = dgvStatementList.Rows[0].Cells[3];
+                    dgvStatementList.CurrentCell =
+                        dgvStatementList.Rows[0].Cells[3];
+
                     dgvStatementList.BeginEdit(true);
                 }
             }
@@ -837,7 +903,8 @@ namespace TDSMAN.FormWeb
                 // LIST OF CHALLAN ENQUIRY CIN - Period Payment 
                 case enmRequestType.CINPP:
                     //TracesResponse response = objAccount.CIN_Period_Payment((TracesData)objList[1]);
-                    TracesResponse response = objAccount.CIN_Period_Payment_New((TracesData)objList[1]);
+                    //TracesResponse response = objAccount.CIN_Period_Payment_New((TracesData)objList[1]);
+                    TracesResponse response = objAccount.CIN_Period_Payment_New_26_27((TracesData)objList[1]);
                     objRetval.Add(enmRequestType.CINPP);
                     objRetval.Add(response);
                     e.Result = objRetval;
@@ -1851,9 +1918,9 @@ namespace TDSMAN.FormWeb
             InitializeCaptcha();
         }
 
-        private void LnkPost2526_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LnkPre2627_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            cmnService.J_ShowChildForm(new TrnChallanStatusTraces_26_27(), J_Var.frmMain, "Challan Status Query");
+            cmnService.J_ShowChildForm(new TrnChallanStatusTraces(), J_Var.frmMain, "Challan Status Query");
         }
     }
 

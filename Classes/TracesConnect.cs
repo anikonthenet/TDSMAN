@@ -18074,6 +18074,280 @@ namespace TDSMAN.Classes
 
         #endregion
 
+        #region CIN_Period_Payment_New_26_27
+
+        public TracesResponse CIN_Period_Payment_New_26_27(TracesData objData)
+        {
+            TracesResponse objResponse = new TracesResponse();
+            objResponse.Respons = enmResponse.Success;
+
+            DataTable table = CreateCINPeriodPaymentTable();
+
+            try
+            {
+                //---------------------------------------------------------
+                // Existing application values:
+                //
+                // A = All
+                // M = Claimed
+                // U = Unclaimed
+                //---------------------------------------------------------
+
+                switch ((objData.ChallanStatus ?? "").ToUpper())
+                {
+                    case "M":
+                        // CLAIMED
+                        FetchCINPeriodPayment_New(
+                            objData,
+                            "CLAIMED",
+                            true,
+                            table);
+                        break;
+
+                    case "U":
+                        // UNCLAIMED
+                        FetchCINPeriodPayment_New(
+                            objData,
+                            "UNCLAIMED",
+                            false,
+                            table);
+                        break;
+
+                    case "A":
+                    default:
+
+                        // CLAIMED
+                        FetchCINPeriodPayment_New(
+                            objData,
+                            "CLAIMED",
+                            true,
+                            table);
+
+                        // UNCLAIMED
+                        FetchCINPeriodPayment_New(
+                            objData,
+                            "UNCLAIMED",
+                            false,
+                            table);
+
+                        break;
+                }
+
+                //---------------------------------------------------------
+                objResponse.CustomeTypes = table;
+                //---------------------------------------------------------
+            }
+            catch (WebException ex)
+            {
+                string err = "";
+
+                if (ex.Response != null)
+                {
+                    using (var reader =
+                        new StreamReader(
+                            ex.Response.GetResponseStream()))
+                    {
+                        err = reader.ReadToEnd();
+                    }
+                }
+
+                //---------------------------------------------------------
+                // Authentication/session errors
+                //---------------------------------------------------------
+                HttpWebResponse httpResponse =
+                    ex.Response as HttpWebResponse;
+
+                if (httpResponse != null &&
+                    (httpResponse.StatusCode ==
+                        HttpStatusCode.Unauthorized ||
+                     httpResponse.StatusCode ==
+                        HttpStatusCode.Forbidden))
+                {
+                    objResponse.Respons =
+                        enmResponse.SessionTimeout;
+
+                    objResponse.Message =
+                        "TRACES session has expired.";
+                }
+                else
+                {
+                    objResponse.Respons =
+                        enmResponse.Failed;
+
+                    objResponse.Message =
+                        string.IsNullOrEmpty(err)
+                            ? ex.Message
+                            : err;
+                }
+            }
+            catch (Exception ex)
+            {
+                objResponse.Respons =
+                    enmResponse.Failed;
+
+                objResponse.Message =
+                    ex.Message;
+            }
+
+            return objResponse;
+        }
+
+        #endregion
+
+        #region CreateCINPeriodPaymentTable
+
+        private DataTable CreateCINPeriodPaymentTable()
+        {
+            DataTable table = new DataTable();
+
+            table.Columns.Add("BSR Code");
+            table.Columns.Add("Date of Deposit");
+            table.Columns.Add("Challan Serial Number");
+            table.Columns.Add("Challan Amount");
+            table.Columns.Add("Challan Status");
+
+            return table;
+        }
+
+        #endregion
+
+        #region FetchCINPeriodPayment_New
+        private void FetchCINPeriodPayment_New(
+            TracesData objData,
+            string matchStatus,
+            bool includeConsumptionStatus,
+            DataTable table)
+        {
+            //---------------------------------------------------------
+            // PREPARE PAYLOAD
+            //---------------------------------------------------------
+
+            TracesChallanVerifyRequest payload =
+                new TracesChallanVerifyRequest();
+
+            payload.tan =
+                TracesSession.TAN;
+
+            payload.fromDate =
+                FormatTracesApiDate(
+                    objData.FromChallanDepositDate);
+
+            payload.toDate =
+                FormatTracesApiDate(
+                    objData.ToChallanDepositDate);
+
+            payload.matchStatus =
+                matchStatus;
+
+            //---------------------------------------------------------
+            // CLAIMED challans require consumption status
+            //---------------------------------------------------------
+
+            if (includeConsumptionStatus)
+            {
+                payload.consumptionStatus =
+                    new List<string>
+                    {
+                "PARTIALLY CONSUMED",
+                "FULLY CONSUMED"
+                    };
+            }
+            else
+            {
+                payload.consumptionStatus = null;
+            }
+
+            //---------------------------------------------------------
+            // NEW TRACES API
+            //---------------------------------------------------------
+
+            string url =
+                "https://traces-app.tdscpc.gov.in/" +
+                "oltaschallancorrection/deductor/challan/" +
+                "searchPeriodOfPayment?page=0&size=2000";
+
+            //---------------------------------------------------------
+            // JSON
+            //---------------------------------------------------------
+
+            string json =
+                JsonConvert.SerializeObject(
+                    payload,
+                    new JsonSerializerSettings
+                    {
+                        NullValueHandling =
+                            NullValueHandling.Ignore
+                    });
+
+            //---------------------------------------------------------
+            // USE YOUR EXISTING WORKING METHOD
+            //---------------------------------------------------------
+
+            string responseText =
+                PostJsonRequest(
+                    url,
+                    json,
+                    "https://traces.tdscpc.gov.in/" +
+                    "auth/CheckChallanStatus/Deductor"
+                );
+
+            //---------------------------------------------------------
+            // DESERIALIZE
+            //---------------------------------------------------------
+
+            TracesChallanVerifyResponse apiResponse =
+                JsonConvert.DeserializeObject
+                    <TracesChallanVerifyResponse>(
+                        responseText);
+
+            if (apiResponse == null ||
+                apiResponse.data == null)
+            {
+                return;
+            }
+
+            //---------------------------------------------------------
+            // ADD TO OLD TDSMAN TABLE FORMAT
+            //---------------------------------------------------------
+
+            foreach (TracesChallanItem item
+                     in apiResponse.data)
+            {
+                AddCINPeriodPaymentRow(
+                    table,
+                    item);
+            }
+        }
+
+        #endregion
+
+        #region AddCINPeriodPaymentRow
+
+        private void AddCINPeriodPaymentRow(
+            DataTable table,
+            TracesChallanItem item)
+        {
+            DataRow dRow = table.NewRow();
+
+            dRow["BSR Code"] =
+                item.bsrCode ?? "";
+
+            dRow["Date of Deposit"] =
+                item.challanDepositDate ?? "";
+
+            dRow["Challan Serial Number"] =
+                Convert.ToString(item.challanSeqNum);
+
+            dRow["Challan Amount"] =
+                string.Format("{0:0.00}", item.totalAmount);
+
+            dRow["Challan Status"] =
+                item.matchStatus ?? "";
+
+            table.Rows.Add(dRow);
+        }
+
+        #endregion
 
         #region CIN_CIN_BINParticulars
         public TracesResponse CIN_CIN_BINParticulars(TracesData objData)
